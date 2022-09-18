@@ -16,15 +16,23 @@ export default function Features (prop){
             </p>
             <div className='features--boxes'>
             <Feature_box
+            title = {`HTML`}
+            description = {`structure a web page`}
             handler = {{handleStyle : toggleStyle}}
             />
             <Feature_box
+            title = {`CSS`}
+            description = {`style it`}
             handler = {{handleStyle : toggleStyle}}
             />
             <Feature_box
+            title = {`JS`}
+            description = {`implement dynamic features`}
             handler = {{handleStyle : toggleStyle}}
             />
             <Feature_box
+            title = {`React`}
+            description = {`let it be flexible`}
             handler = {{handleStyle : toggleStyle}}
             />
             </div>

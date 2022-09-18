@@ -7,7 +7,7 @@ import './darked.css'
 import character_ from '../imges/character_.svg'
 
 export default function Home ( prop ) {
-
+    // try to see if it push the code automatically
     var toggleStyle = (x) => {
         return prop.state.darkMode_$ ? (x=='home_' ? 'home_d--'  : x=='infos_btn' ? 'infos_da--btn' : x=='infos_head' ? 'infos_da--head' : x=='infos_body' ? 'infos_da--body' : x=='infos_body_p' ? 'infos_da--body-p' : 'UNDEFEINED ITEM') : (x=='home_' ? 'home--'  : x=='infos_btn' ? 'infos--btn' : x=='infos_head' ? 'infos--head' : x=='infos_body' ? 'infos--body' : x=='infos_body_p' ? 'infos--body-p' : 'UNDEFEINED ITEM')
     }
@@ -21,16 +21,16 @@ export default function Home ( prop ) {
 
             <div className='infos--'>
                 <p className={ toggleStyle('infos_head')}>
-                    wer ist da, was ist da los
+                    Ready to get your website?
                 </p>
                 <p className={ toggleStyle('infos_body')}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit laborum.
+                    IXTIX IS A GROUP OF SKILLED FRONTEND-PROGRAMMERS WITH A BIT OF EXPERIENCE AND LOT OF CONFIDENCE
                 </p>
                 <p className={ toggleStyle('infos_body_p')}>
-                here comes some text . . .
+                    we code while sleeping though!
                 </p>
 
-                <Link to={`/about`} className='link_'>
+                <Link to={`/about`} className='link_' style={{width:'100%'}}>
                 <button className={toggleStyle('infos_btn')}>
                     <p className='btn-p'>learn more . .</p>                    
                 </button>

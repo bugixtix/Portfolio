@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Blog_Site from './blog/Blog_Site'
+
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div className='index--'>
     <App/>
+    {/* <Blog_Site/> */}
   </div>
 );
 

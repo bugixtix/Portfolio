@@ -12,18 +12,15 @@ import {FiSun} from 'react-icons/fi'
 import {FaRegMoon} from 'react-icons/fa'
 
 export default function Navbar (prop){
+    // prop.state.setDarkMode_$((prev)=>{return localStorage.getItem('dark')})
     // toggle dark mode btn
-    let toggleMode = () =>{prop.state.setDarkMode_$((prev)=>!prev)}
+    let toggleMode = () =>{
+        prop.state.setDarkMode_$((prev)=>!prev)
+        let y = !prop.state.darkMode_$ ? true : false
+        localStorage.setItem('dark', JSON.stringify(y))
+    }
     // 
-
-
-    // settin on small screens 
-    useEffect(()=>{
-        console.log(prop.state.winWidth_$) 
     
-      },[prop.state.winWidth_$])
-
-    // 
 
     // styling on dark mode
     var toggleStyle = (x) => {
@@ -86,7 +83,7 @@ export default function Navbar (prop){
 
             {(prop.state.winWidth_$ < 427) ?   <OptionsBtn/>  : <div></div>}
 
-            <Link to={'/home'}  className='link_'> 
+            <Link to={'/'}  className='link_'> 
             <button className={ toggleStyle('logo_text') }>
             IXTIX BUGY
             </button> 
@@ -95,12 +92,17 @@ export default function Navbar (prop){
             </div>
 
             <ul className="options--">
-                <Link to={'/home'}  className='link_'>
+                <Link to={'/'}  className='link_'>
                     <button className={ toggleStyle('options_li') }>
                     Home
                     </button>
                 </Link>
-
+                
+                <Link to={'/article'} className={`link_`}>
+                    <button className={toggleStyle('options_li')}>
+                        Article
+                    </button>
+                 </Link>
                 <Link to={'/about'}  className='link_'>
                     <button className={ toggleStyle('options_li') }>
                         About me

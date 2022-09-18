@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+span{padding: 0px 4px;}
+
+.article_info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 0px 12px 0px;
+    color: #777;
+}
+.Blog_Site{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+.blog_body--{
+    display: flex;
+    /* align-items: ; */
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    border: 3px solid #337;
+    width: 77vw;
+    margin-top: 50px;
+}
+.body_content--{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 58vw;
+    padding: 10px;
+    border: 2px solid #000;
+    /* width: 76vw; */
+}
+.body_image{
+    width: 56vw;
+    height: auto;
+    border-radius: 8px;
+}
+.body_title{
+    /* font-size: 28px; */
+    font-weight: 600;
+    text-align:center;
+    /* padding: 10px; */
+    display: block;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.body_text{
+    font-size: 22px;
+    font-weight: 500;
+    color: #11c;
+    display: block;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.mini{
+    font-size: 24px;
+    color: #337;
+    font-weight: 600;
+}
+.underline{
+    text-decoration: underline;
+}
+.href{
+    font-size: 20px;
+    font-weight: 600;
+    color: #373;
+    text-decoration: none;
+    cursor: pointer;
+    /* margin: 0px 4px; */
+}
+.text_img{
+    width: 100%;
+}
+.flex_center{
+    width: 56vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.padding_I{
+    padding: 0px 10px;
+}
+.tag_{
+    border: 2px solid #777;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+
+
+
+/* SIDE */
+._flex_column{
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+    align-items: center;
+}
+.blog_side{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 18vw;
+    margin: 15px 0px;
+    border: 1px solid #558;
+}
+.side_image{
+    max-width: 100%;
+}
+.side_titel,.side_text{
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+    font-size: 16px;
+}

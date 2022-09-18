@@ -45,6 +45,7 @@
     /* Articles */
     .article_box--{
         margin: 8px;
+        max-width: 282px;
     }
 
 
@@ -118,6 +119,7 @@
     
     .article_da_box--{
         margin: 8px;
+        max-width: 282px;
     }
     
     .contact_da--{
@@ -131,6 +133,8 @@
     .form_da_icons--{
         border-radius: 4px;
     }
+
+    
         
 
 }
@@ -160,11 +164,18 @@
         
         /* home */
         .infos--{
-            padding: 20px 10px;
+            padding: 0px 30px 20px 30px;
             width: 100%;
             margin: 0px;
             text-align: center;
         }
+        .infos--head{
+            font-size:22px;
+        }
+        .infos--body{
+            font-size:20px;
+            padding: 10px;
+        }.infos--body::first-letter{font-size: 22px;}
         .home--{
             flex-direction: column;
             justify-content:space-around;
@@ -178,9 +189,31 @@
             height: 60%;
         }
 
+        /* FEatures:: */
         
+        .features--{
+            flex-direction: column;
+        }
+        .features--info{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .features--boxes{
+            width: 100%;
+        }
+        .feature_box--{
+            margin: 8px 8px;
+
+        }
         
         /* DARKMODE */
+        .infos_da--head{
+            font-size: 22px;
+        }
+        .infos-da--body{
+            font-size: 20px;
+        }.infos_da--body::first-letter{font-size: 22px;}
         .home_d--{
             flex-direction:column;
             justify-content: space-around;
@@ -195,5 +228,20 @@
         }
         .form_da_icons--{
             border-radius: 8px;
+        }
+        .features_da--{
+            flex-direction: column;
+        }
+        .features_da--info{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .features_da--boxes{
+            width: 100%;
+        }
+        .feature_da_box--{
+            margin: 8px 8px;
+
         }
 }

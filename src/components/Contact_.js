@@ -39,14 +39,17 @@ export default function Contact ( prop ){
             </div>
             <div className={toggleStyle('form_icons')}>
             <form className='contact--form' onSubmit={handleSubmit}>
+                <fieldset className='contact--form'>
+                <legend className='feedback_'>Feedback</legend>
                 <div className='name_email_--'>
 
-                <input type='text' name='name' id={toggleStyle('name_')} placeholder='Enter your name' required value={infos_$.name} onChange={handleChange} />
+                <input type='text' name='name' id={toggleStyle('name_')} placeholder='Name' required value={infos_$.name} onChange={handleChange} />
                 <input type='email' id={toggleStyle('email_')} placeholder='email' name='email' value={infos_$.email} onChange={handleChange} />
                 </div>
-                <input type='text' id={toggleStyle('title_')} placeholder='comment title' name='title' value={infos_$.title} onChange={handleChange} />
-                <textarea type='comment' id={toggleStyle('comment_')} className='comment_' placeholder='your comment' name='comment' value={infos_$.comment} onChange={handleChange} required/>
+                <input type='text' id={toggleStyle('title_')} placeholder='Comment-title' name='title' value={infos_$.title} onChange={handleChange} />
+                <textarea type='comment' id={toggleStyle('comment_')} className='comment_' placeholder='Comment' name='comment' value={infos_$.comment} onChange={handleChange} required/>
                 <button type='submit' id={toggleStyle('submit_')}>send</button>
+                </fieldset>
             </form>
 
             <ul className='contact_icons--'>
