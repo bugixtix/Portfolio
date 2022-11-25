@@ -7,32 +7,55 @@ import './darked.css'
 import character_ from '../imges/character_.svg'
 
 export default function Home ( prop ) {
-    // try to see if it push the code automatically
-    var toggleStyle = (x) => {
-        return prop.state.darkMode_$ ? (x=='home_' ? 'home_d--'  : x=='infos_btn' ? 'infos_da--btn' : x=='infos_head' ? 'infos_da--head' : x=='infos_body' ? 'infos_da--body' : x=='infos_body_p' ? 'infos_da--body-p' : 'UNDEFEINED ITEM') : (x=='home_' ? 'home--'  : x=='infos_btn' ? 'infos--btn' : x=='infos_head' ? 'infos--head' : x=='infos_body' ? 'infos--body' : x=='infos_body_p' ? 'infos--body-p' : 'UNDEFEINED ITEM')
+
+    var in1Div_ = {
+        minWidth:'35vw',
+        display:'flex',
+        justifyContent:'flex-start',
+        alignItems:'center',
+        margin:'2vh 0px',
+        borderRadius:'24px',
+        zIndex:'2'
     }
-
+    var img_s = {
+        width:'90%',
+        margin:'0px',
+        height:'auto',
+        borderRadius:'100%',
+        opacity:'1',
+        zIndex:'2'
+    }
+    var in2Div_ = {
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+        padding:'20px',
+        width:'45vw',
+        margin:'0px 5px 0px 0px',
+        postion:'relative',
+    }
     return(
-        <div className={toggleStyle('home_')}>
+        <div className={'outDiv_1'}>
 
-            <div className='image--'>
-                <img src={character_} className='image--img'></img>
+            <div style={in1Div_} className='image--'>
+                <img style={img_s}src={character_} className='img_s'></img>
             </div>
 
-            <div className='infos--'>
-                <p className={ toggleStyle('infos_head')}>
+            <div style={in2Div_}>
+                <p>
                     Ready to get your website?
                 </p>
-                <p className={ toggleStyle('infos_body')}>
+                <p >
                     IXTIX IS A GROUP OF SKILLED FRONTEND-PROGRAMMERS WITH A BIT OF EXPERIENCE AND LOT OF CONFIDENCE
                 </p>
-                <p className={ toggleStyle('infos_body_p')}>
+                <p >
                     we code while sleeping though!
                 </p>
 
                 <Link to={`/about`} className='link_' style={{width:'100%'}}>
-                <button className={toggleStyle('infos_btn')}>
-                    <p className='btn-p'>learn more . .</p>                    
+                <button>
+                    <p>learn more . .</p>                    
                 </button>
                 </Link>
             </div>
