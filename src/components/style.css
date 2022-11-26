@@ -21,19 +21,28 @@
     /* font-family: 'Eczar', serif; */
 }
 
-.header--{
-    background-color: rgba( 100, 100, 300, 0.05);
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 32px;
-    height: 70px;
-    width: 100%;
-    position: relative;
-    box-shadow: 2px -2px 20px 4px rgba(0,0,0,0.37);
-    z-index: 4;
+/* MY NEW SPACE */
+.btn_4:hover{
+    background-color: rgba(0,0,0,0.2) !important;
+}.btn_4:focus{background-color: rgba(0, 0, 0, 0.5) !important; color:#fff;outline: none;}
+#c2_0:hover{
+    box-shadow:  4px 3px 2px -1px #666 !important;
 }
+
+/* END OF MY NEW SPACE */
+    .header--{
+        background-color: rgba( 100, 100, 300, 0.05);
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 32px;
+        height: 70px;
+        width: 100%;
+        position: relative;
+        box-shadow: 2px -2px 20px 4px rgba(0,0,0,0.37);
+        z-index: 4;
+    }
 
 /* .logo--{
     display: flex;
@@ -89,7 +98,7 @@
     position:relative;
     transition:all ease-in-out 450ms;
 }
-.mode_::after, .options--li::after{
+.mode_::after, .btn_4::after{
 visibility: hidden;
 position: absolute;
 background:rgba(200, 200, 200, 0.9);
@@ -99,7 +108,7 @@ transition: all .45s ease-in-out;
 content: '';
 bottom: 4px;
 left:2px;
-width: 96%;
+width: 80%;
 height: 1px;
 box-shadow: 1px 1px 1px 1px rgba( 200, 200, 200, 0.9);
 border-radius: 100%;
@@ -672,9 +681,14 @@ z-index:1;
     border:2px solid #ee3;
 }
 
-#email_:focus,#name_:focus,#title_:focus, #comment_:focus{
+input[type=text]:focus,input[type=email]:focus,input[name=title]:focus, textarea[type=comment]:focus{
     outline:none;
-    border: 3px solid #111;
+    border: 2px solid #f00 !important;
+}
+button[type=submit]:focus{
+    transform: scale(0.94);
+    outline: none;
+    border:2px solid #ee3 !important;
 }
 .contact--form::after{
     content:'';
@@ -704,13 +718,15 @@ z-index:1;
     font-size: 26px;
     cursor: pointer;
 }
-.icon_II{
+/* DONT DELETE ME */
+#i_1{
     color:#fff;
-}.icon_I{
-    color: #7ee;
-}.icon_III{
+}#i_2{
+    color:#7ee;
+}#i_3{
     color:#a60;
 }
+/*  */
 .feedback_{
     font-size: 22px;
     color: #333;

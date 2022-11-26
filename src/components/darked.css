@@ -57,7 +57,7 @@
     position:relative;
     transition:all ease-in-out 450ms;
 }
-.mode_da_::after, .options_da--li::after{
+.options_da--li::after{
     visibility: hidden;
     position: absolute;
     background:rgba(300, 300, 300, 0.9);
@@ -67,9 +67,9 @@
     content: '';
     bottom: 4px;
     left:2px;
-    width: 96%;
+    width: 90%;
     height: 1px;
-    box-shadow: 1px 1px 1px 1px rgba( 330, 330, 330, 0.9);
+    box-shadow: 1px 1px 1px 1px rgba( 330, 330, 330, 0.9) !important;
     border-radius: 100%;
     }
     .options_da--li:hover::after,.mode_da_:hover::after{
