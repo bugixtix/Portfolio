@@ -16,9 +16,10 @@ import './media-style.css'
 import{GrTwitter} from 'react-icons/gr'
 import{FiGithub} from 'react-icons/fi'
 import{FaBlog} from 'react-icons/fa'
-import {BsFillBugFill} from 'react-icons/bs'
+import {BsBug, BsFillBugFill} from 'react-icons/bs'
 import {FiSun} from 'react-icons/fi'
-import {FaEuroSign, FaRegMoon} from 'react-icons/fa'
+import {FaEuroSign, FaRegMoon,FaCopyright} from 'react-icons/fa'
+import { reStyle$, dynamicStyle$ } from '../lainy'
 
 export function Navbar (prop){
 
@@ -64,10 +65,10 @@ export function Navbar (prop){
             textDecoration:'none',
             padding:'12px',
             backgroundColor:'rgba(300,300,300,0.65)',
-            color:'#000',
+            color: dynamicStyle$('#000',prop.darkMode_$,'#eee'),
             fontWeight:'500',
             position:'relative',
-            transition:'all ease 550ms'
+            transition:'all ease 550ms',
         }
         return(
             <ul style={ul_} className={`ul_ ${!appearance_$ && 'none'}`}>
@@ -130,31 +131,35 @@ export function Navbar (prop){
         minWidth:'0px',
     }    
     var header_s = {
-        backgroundColor:'rgba(100,100,300,0.05)',
+        backgroundColor:dynamicStyle$('rgba(100,100,300,0.05)',prop.darkMode_$, '#161b33'),
         display:'flex',
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
-        padding:'0px 32px',
+        padding:'0px 50px 0px 100px',
         height:'70px',
         width:'100%',
         position:'relative',
-        boxShadow:'2px -2px 20px 4px rgba(0,0,0,0.37)',
+        boxShadow:dynamicStyle$('2px -2px 10px 2px rgba(100,100,100,0.6)',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
         zIndex:'4'
     }
     var btns_s = {
         position:'relative',
         height:'100%',
-        backgroundColor:'#eee',
+        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
         transition:'all ease 350ms',
         padding:'6px 12px 2px 12px',
         border:'none',
         cursor:'pointer',
+        color:dynamicStyle$('#222',prop.darkMode_$,'#eee')
+
     }
     return(
         <header style={header_s}>
-            <div style={outDiv_1} className="logo--">
-           <Link to={'/'} className='link_' > 
+            {/* className="logo--" */}
+            <div style={outDiv_1}>
+
+            <Link to={'/'} className='link_' > 
             <button style={btns_s} className={'btn_4'} >
                 <BsFillBugFill/>
             </button> 
@@ -212,7 +217,8 @@ export  function Home_C0 ( prop ) {
         display:'flex',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        background:dynamicStyle$('transparenet', prop.darkMode_$,'#0d0c1d')
     }
     var in1Div_ = {
         minWidth:'35vw',
@@ -244,10 +250,13 @@ export  function Home_C0 ( prop ) {
     var btn_s = {
         padding:'4px 8px',
         outline:'none',
-        backgroundColor:'transparenet',
+        backgroundColor: dynamicStyle$('transparenet',prop.darkMode_$,'#4f3499'),
         border:'none',
         margin:'8px 0px',
         cursor:'pointer',
+    }
+    var p_s = {
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4')
     }
     return(
         <div  style={outDiv_1}className={'outDiv_1'}>
@@ -257,16 +266,16 @@ export  function Home_C0 ( prop ) {
             </div>
 
             <div style={in2Div_}>
-                <p>
+                <p style={p_s}>
                     Hi there!
                 </p>
-                <p >
+                <p style={p_s}>
                     my name is Housam, I'm a front-end developer
                 </p>
 
                 <Link to={`/about`} className='link_'>
                 <button style={btn_s} className='btn_4'>
-                    <p>learn more . .</p>                    
+                    <p style={p_s}>learn more . .</p>                    
                 </button>
                 </Link>
             </div>
@@ -279,15 +288,15 @@ export  function Home_C0 ( prop ) {
 export function Home_C1 (prop){
 
 
-    function Feature_box ( prop ) {
+    function Feature_box (pro) {
         var outDiv_1 = {
             display:'flex',
             flexDirection:'column',
             borderRadius:'12px',
-            border:'2px solid #373',
+            border:dynamicStyle$('1px solid #393',prop.darkMode_$,'1px solid #474973'),
             padding:'20px',
             margin:'10px 12px',
-            boxShadow:'2px 1px 3px #393',
+            boxShadow:dynamicStyle$('2px 1px 3px #393',prop.darkMode_$,'2px 1px 3px #474973'),
             width:'140px',
             height:'150px',
             background:'transparenet'
@@ -299,24 +308,25 @@ export function Home_C1 (prop){
             textShadow:'2px 2px 4px #000, 2px -2px 0px #000'
         }
         var p1_s = {
-            color:'#000',
+            // color:dynamicStyle$('#222',prop.darkMode_$,'#f1dac4'),
             textAlign:'center',
             height:'100%',
             display:'flex',
             flexDirection:'column',
             alignItems:'center',
-            justifyContent:'center'
+            justifyContent:'center',
+            color:dynamicStyle$('#222',prop.darkMode_$,'#f1dac4')
         }
         return(
             // className='feature_box--'
             <div style={outDiv_1}>
                 {/* className={'feature_box_title'} */}
                 <p style={p_s}>
-                {prop.title}
+                {pro.title}
                 </p>
                 {/* className={'feature_box_description'} */}
                 <p style={p1_s}>
-                {prop.description}
+                {pro.description}
                 </p>
             </div>
         )
@@ -328,9 +338,14 @@ export function Home_C1 (prop){
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
+        boxShadow:dynamicStyle$('2px 2px 10px -1px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px -2px rgba(20,20,20,0.6)'),
+        padding:'20px 0px',
+        background:dynamicStyle$('transparenet',prop.darkMode_$,'#161b33')
+
     }
     var p1_s = {
-        textDecoration:'underline'
+        textDecoration:'underline',
+        color: dynamicStyle$('#222',prop.darkMode_$,'#f1dac4')
     }
     var outDiv_2 = {
         width:'60vw',
@@ -375,19 +390,20 @@ export function Home_C1 (prop){
 
 export function Home_C2 (prop){
 
-    function Article_box (prop){
+    function Article_box (pro){
 
         var x = 0 ; 
-        var img_source = x>0 ? prop.img_source : require('../imges/nodejs_wp.jpg')
+        var img_source = x>0 ? pro.img_source : require('../imges/nodejs_wp.jpg')
 
         var outDiv_1 = {
-            margin:'8px',
+            margin:'8px 20px',
             maxWidth:'282px',
-            border:'1px solid #272',
+            border:dynamicStyle$('1px solid #272',prop.darkMode_$,'1px solid #474973'),
             borderRadius:'8px',
             padding:'0px 0px 8px 0px',
-            boxShadow:'5px 5px 7px -1px #333',
+            boxShadow: dynamicStyle$('5px 5px 7px -1px #333',prop.darkMode_$,'3px 3px 5px -1px #000'),
             transition:'all ease-in-out 350ms',
+            background: dynamicStyle$('transparenet',prop.darkMode_$,'#474973')
         }
         var inDiv_1 = {
             maxWidth:'100%'
@@ -406,6 +422,7 @@ export function Home_C2 (prop){
             margin:'0px',
             textDecoration:'underline #993',
             padding:'0px 4px',
+            color:dynamicStyle$('#00f',prop.darkMode_$,'#f1dac4')
         }
         var p2_s = {
             fontWeight:'300',
@@ -435,39 +452,67 @@ export function Home_C2 (prop){
                 <div style={inDiv_2}>
                 {/* className={'infos_title'} */}
                     <p style={p1_s} >
-                    {x>0 ? prop.title_ : 'TITLE'}
+                    {x>0 ? pro.title_ : 'TITLE'}
                     </p>
                     {/* className={'infos_description'} */}
                     <p style={p2_s}>
-                    {x>0 ? prop.description_ : 'DESCRIPTION'}
+                    {x>0 ? pro.description_ : 'DESCRIPTION'}
                     </p>
                     {/* className={'infos_tag'} */}
                     <p style={p3_s} >
-                    {x>0 ? prop.tag_ : 'TAG'}
+                    {x>0 ? pro.tag_ : 'TAG'}
                     </p>
                 </div>
             </div>
         )
     }
 
-    let pseudoArray = [0 , 1 , 2 , 3 , 4]
+    let pseudoArray = [0 , 1 , 2 , 3 ]
 
     let BoxCreator = () => {
         return pseudoArray.map(i=>{
             return <Link className='link_' to={`/article/${i}`} key={i}> <Article_box/> </Link>
         })
     }
-    var outDiv_1 = {
+    var outDiv_s = {
+        display:'flex',
+        flexDirection:'column',
+        padding:'10px 80px',
+        background: dynamicStyle$('transparent',prop.darkMode_$,'#0d0c1d')
+    }
+    var inDiv_2 = {
         display:'flex',
         alignItems:'center',
-        justifyContent:'center',
+        justifyContent:'flex-start',
         flexDirection:'row',
         flexWrap:'wrap',
+        padding:'0px 0px'
+    }
+    var inDiv_1 = {
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'flex-start',
+        padding:'0px 0px'
+    }
+    var h_s = {
+        textTransform:'uppercase',
+        textDecoration:'underline',
+        letterSpacing:'2px',
+        margin:'8px 20px',
+        color: dynamicStyle$('#222',prop.darkMode_$,'#f1dac4')
     }
     return(
         // className={'articles_'}
-        <div style={outDiv_1}>
+        <div style={outDiv_s}>
+        
+        <div style={inDiv_1}>
+        <h2 style={h_s}>LATEST ARTICLES</h2>
+        </div>
+
+        <div style={inDiv_2}>
             {BoxCreator()}
+        </div>
+
         </div>
     )
 }
@@ -492,14 +537,16 @@ export function Contact ( prop ){
     var outDiv_1 = {
         width:'100%',
         position:'relative',
-        background:`linear-gradient(#999,#999,#000), url(${require('../imges/contact_I_bg.jpg')})`,
+        background:`${dynamicStyle$('linear-gradient(#999,#000)',prop.darkMode_$,'linear-gradient(#666,#777)')}, url(${require('../imges/contact_I_bg.jpg')})`,
         backgroundPosition:'left',
-        backgroundBlendMode:'saturation',
+        backgroundBlendMode:dynamicStyle$('saturation',prop.darkMode_$,'darken'),
         display:'flex',
         flexWrap:'wrap',
         alignItems:'center',
         zIndex:'5',
-        margin:'2em 0px '
+        margin:'2em 0px ',
+        boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
+
     }
     var inDiv_1 = {
     }
@@ -510,7 +557,9 @@ export function Contact ( prop ){
         flexDirection:'column',
         alignItems:'center',
         zIndex:'2',
-        margin:'2em 2em 0em 2em'
+        margin:'2em 2em 0em 100px',
+        border:'none',
+        boxShadow:'5px 5px 7px -1px #333',
     }
     var legend_s = {
         fontWeight:'600',
@@ -529,7 +578,7 @@ export function Contact ( prop ){
         maxWidth:'174px',
         padding:'4px 12px',
         backgroundColor:'rgba(10,10,10,0.5)',
-        border:'3px solid #ded',
+        // border:'none',
         margin:'4px',
         color:'#fff',
         borderRadius:'20px',
@@ -540,7 +589,7 @@ export function Contact ( prop ){
         width:'274px',
         padding:'4px 12px',
         backgroundColor:'rgba(10,10,10,0.5)',
-        border:'3px solid #ded',
+        // border:'3px solid #ded',
         margin:'4px',
         color:'#fff',
         borderRadius:'20px',
@@ -550,7 +599,7 @@ export function Contact ( prop ){
     var input_3 = {
         padding:'4px 12px',
         backgroundColor:'rgba(10,10,10,0.5)',
-        border:'2px solid #ded',
+        // border:'2px solid #ded',
         margin:'4px',
         color:'#fff',
         borderRadius:'20px',
@@ -567,13 +616,14 @@ export function Contact ( prop ){
         resize:'none',
         color:'#fff',
         width:'456px',
-        border:'2px solid #ded',
+        borderWidth:'2px',
+        borderStyle:'inset',
         textTransform:'uppercase',
         letterSpacing:'1px'
     }
     var btn_1 = {
         width:'456px',
-        background: 'linear-gradient(217deg, rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%), linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)',
+        background: 'linear-gradient(217deg, rgba(0,0,0,.8),rgba(2,0,0,0) 70.71%), linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)',
         border:'none',
         borderRadius:'12px',
         padding:'8px',
@@ -660,19 +710,65 @@ export function Contact ( prop ){
     )
 }
 
+export function Footer (prop){
+
+    var outDiv_s = {
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'flex-start',
+        height:'50px',
+        background:dynamicStyle$('#fe4',prop.darkMode_$,'#a69cac')
+    }
+    var inDiv_1 = {
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection:'row',
+        position:'relative',
+        left:'100px',
+    }
+    var p_s = {
+        textTransform:'uppercase',
+        letterSpacing:'2px',
+        padding:'0px 4px'
+    }
+
+    return(
+
+        <div style={outDiv_s}>
+
+            <div style={inDiv_1}>
+
+            <BsBug/>
+            <p style={p_s}>
+                ixtix 
+            </p>
+            <FaCopyright/>
+            <p style={p_s}>
+                2022
+            </p>
+
+            </div>
+
+        </div>
+
+    )
+}
 export function Home_Interface (prop){
     var Home_Interface = {
-
+        background: dynamicStyle$('transparent', prop.darkMode_$,'#161b33')
     }
     return(
 
         <div style={Home_Interface}>
 
-        <Navbar darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$} setWinWidth_$={prop.setWinWidth_$} />
-        <Home_C0 darkMode_$={prop.darkMode_$} />
-        <Home_C1/>
-        <Home_C2/>
-        <Contact/>
+        <Navbar  darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$} setWinWidth_$={prop.setWinWidth_$} />
+        <Home_C0 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
+        <Home_C1 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
+        <Home_C2 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
+        <Contact darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
+        <Footer  darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
 
         </div>
     )

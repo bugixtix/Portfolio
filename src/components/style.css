@@ -23,7 +23,7 @@
 
 /* MY NEW SPACE */
 .btn_4:hover{
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(150,150,250,0.5) !important;
 }.btn_4:focus{background-color: rgba(0, 0, 0, 0.5) !important; color:#fff;outline: none;}
 #c2_0:hover{
     box-shadow:  4px 3px 2px -1px #666 !important;
