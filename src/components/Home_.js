@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // style
 import './style.css'
-import './darked.css'
+// import './darked.css'
 // imges
 import character_ from '../imges/character_.svg'
 import contact_I_bg from '../imges/contact_I_bg.jpg'
@@ -10,9 +10,9 @@ import contact_I_bg from '../imges/contact_I_bg.jpg'
 
 import { useState, useEffect } from "react";
 // STYLE
-import './media-style.css'
+// import './media-style.css'
 // ICONS
-
+// 28_11 .. it becomes a bit comlicated
 import{GrTwitter} from 'react-icons/gr'
 import{FiGithub} from 'react-icons/fi'
 import{FaBlog} from 'react-icons/fa'
@@ -21,8 +21,23 @@ import {FiSun} from 'react-icons/fi'
 import {FaEuroSign, FaRegMoon,FaCopyright} from 'react-icons/fa'
 import { reStyle$, dynamicStyle$ } from '../lainy'
 
+let width_427 = 427
+let width_769 = 769
+let condition_1 = (value1, value2, state) => {
+    return state < value1 ? true : false
+}
+let condition_2 = (value1, value2, state) => {
+    return state > value1 ? (state > value2 ? false : true) : false
+}
 export function Navbar (prop){
-
+    let [winWidth_$, setWinWidth_$] = useState(window.innerWidth)
+    let setWindowWidth = () => {
+      setWinWidth_$(window.innerWidth)
+    }
+    
+    useEffect(()=>{
+        window.addEventListener('resize', setWindowWidth)
+    },[winWidth_$])
     // state$ to check if btn was clicked , another state to hide btn
     var [clicked_$, setClicked_$] = useState(false)
     var [appearance_$, setAppearance_$] = useState(false)    
@@ -132,13 +147,13 @@ export function Navbar (prop){
     }    
     var header_s = {
         backgroundColor:dynamicStyle$('rgba(100,100,300,0.05)',prop.darkMode_$, '#161b33'),
-        display:'flex',
+        display: 'flex',
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
-        padding:'0px 50px 0px 100px',
-        height:'70px',
-        width:'100%',
+        padding: winWidth_$ < 429 ? '500px' : '0px' ,
+        height: dynamicStyle$('70px', prop.winWidth_$<width_427 ? true : false ,'50px'),
+        width:'100vw',
         position:'relative',
         boxShadow:dynamicStyle$('2px -2px 10px 2px rgba(100,100,100,0.6)',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
         zIndex:'4'
@@ -151,8 +166,18 @@ export function Navbar (prop){
         padding:'6px 12px 2px 12px',
         border:'none',
         cursor:'pointer',
-        color:dynamicStyle$('#222',prop.darkMode_$,'#eee')
-
+        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
+        display:dynamicStyle$('blog',condition_1(width_427,width_769,prop.winWidth_$),'none'),
+    }
+    var btn_2 = {
+        position:'relative',
+        height:'100%',
+        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
+        transition:'all ease 350ms',
+        padding:'6px 12px 2px 12px',
+        border:'none',
+        cursor:'pointer',
+        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
     }
     return(
         <header style={header_s}>
@@ -200,7 +225,7 @@ export function Navbar (prop){
                 </Link>
 
                 {prop.winWidth_$ < 427 && smallScreenLogo()}
-                <button style={btns_s} className={ 'mode_' } onClick={toggleMode}>
+                <button style={btn_2} className={ 'mode_' } onClick={toggleMode}>
                     {prop.darkMode_$ ? <FiSun/> :<FaRegMoon/>}
                 </button>
 

@@ -4,7 +4,7 @@
         padding: 4px 16px;
         height: 50px;
         z-index: 0.9;
-        display: relative;
+        
     }
     .logo--text{
         display: none;
@@ -14,6 +14,7 @@
         border-radius: 100%;
         padding: 2px 10px 0px 10px;
         display: none;
+        /* display: ;1 */
     }
 
     .options--li{

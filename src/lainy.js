@@ -117,7 +117,7 @@ export var reStyle$ = (StyleArray) => {
         }
     return result
 }
-export var dynamicStyle$ = (value, state, value1)=>state?value1:value
+export var dynamicStyle$ = (value, state, value1, state1, value2)=>state?value1:state1?value2:value
 
 
 // reStyle$(myR,1,2)
