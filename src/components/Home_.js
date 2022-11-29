@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 // import './media-style.css'
 // ICONS
 // 28_11 .. it becomes a bit comlicated
+// 29_11 .. i get no time for it, and i don like that
 import{GrTwitter} from 'react-icons/gr'
 import{FiGithub} from 'react-icons/fi'
 import{FaBlog} from 'react-icons/fa'
