@@ -3,9 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 // 
 import './Blog_style.css'
 import nodejs_wp from '../imges/nodejs_wp.jpg'
-import Navbar from '../components/Navbar_'
+import {Navbar} from '../components/Home_'
 import App from '../App'
-import Blog_Nav from '../components/Blog_Nav'
  export default function Blog_Site () {
 
 
@@ -22,8 +21,6 @@ import Blog_Nav from '../components/Blog_Nav'
     return(
         
         <div className='Blog_Site'>
-
-            <Blog_Nav/>
 
             <div className='blog_body--'>
 
@@ -57,8 +54,6 @@ import Blog_Nav from '../components/Blog_Nav'
                     <Side/>
                 </div>
                 
-
-
             </div>
 
         </div>
@@ -66,7 +61,6 @@ import Blog_Nav from '../components/Blog_Nav'
 }
 
 function Side () {
-
 
     return(
     <div className='blog_side'>

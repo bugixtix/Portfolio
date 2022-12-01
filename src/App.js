@@ -5,7 +5,7 @@ import './components/darked.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 // COMPONENTS
-import Navbar from './components/Navbar_';
+import {Navbar} from './components/Home_';
 import  { Home_Interface } from './components/Home_'
 import Features from './components/Features_'
 import Articles from './components/Articles_';
@@ -41,38 +41,14 @@ function App() {
   let Blog = () =>{
     return(
       <Fragment>
-        <Navbar
-        state = {{scrollable:true, darkMode_$ : dark_$, setDarkMode_$ : setDark_$ , winWidth_$ : winWidth_$ , setWinWidth_$ : setWinWidth_$ }}
-        />
-        <Blog_Site/>
+        <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+        <Blog_Site darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
       </Fragment>
     )
   }
   let Dom = () =>{
     return(
       <Fragment>
-
-        {/* <Navbar 
-        state = {{darkMode_$ : dark_$, setDarkMode_$ : setDark_$ , winWidth_$ : winWidth_$ , setWinWidth_$ : setWinWidth_$ }}
-        /> */}
-
-        {/* <Home
-        state = {{darkMode_$ : dark_$}}
-        />
-
-        <Features
-        state = {{darkMode_$ : dark_$}}
-        />
-
-        <Articles
-        state = {{darkMode_$ : dark_$}}
-        />
-
-        <Contact
-        state = {{darkMode_$ : dark_$}}
-        /> */}
-        {/* <Link to={'/abc'} >Here</Link> */}
-
         <Home_Interface darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
       </Fragment>
     )
