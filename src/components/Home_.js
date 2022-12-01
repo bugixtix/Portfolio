@@ -1,31 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// style
-import './style.css'
-// import './darked.css'
-// imges
-import character_ from '../imges/character_.svg'
-import contact_I_bg from '../imges/contact_I_bg.jpg'
-
-
-import { useState, useEffect } from "react";
 // STYLE
-// import './media-style.css'
-// ICONS
-// 28_11 .. it becomes a bit comlicated
-// 29_11 .. i get no time for it, and i don like that
+import './style.css'
+// IMGS // ICONS
+import character_ from '../imges/character_.svg';
+import { useState, useEffect } from "react";
 import{GrTwitter} from 'react-icons/gr'
 import{FiGithub} from 'react-icons/fi'
 import{FaBlog} from 'react-icons/fa'
 import {BsBug, BsFillBugFill} from 'react-icons/bs'
 import {FiSun} from 'react-icons/fi'
 import {FaEuroSign, FaRegMoon,FaCopyright} from 'react-icons/fa'
-import { reStyle$, dynamicStyle$ } from '../lainy'
+import { reStyle$, dynamicStyle$, isNull$ } from '../lainy'
 
 let width_427 = 427
 let width_769 = 769
 let condition_1 = (value1, value2, state) => {
-    return state < value1 ? true : false
+    return state <= value1 ? true : false
 }
 let condition_2 = (value1, value2, state) => {
     return state > value1 ? (state > value2 ? false : true) : false
@@ -41,7 +32,7 @@ export function Navbar (prop){
     },[winWidth_$])
     // state$ to check if btn was clicked , another state to hide btn
     var [clicked_$, setClicked_$] = useState(false)
-    var [appearance_$, setAppearance_$] = useState(false)    
+    var [appearance_$, setAppearance_$] = useState(null)    
 
     // set State to change to the dark / light mode
     let toggleMode = () =>{
@@ -50,12 +41,22 @@ export function Navbar (prop){
         localStorage.setItem('dark', JSON.stringify(y))
     }
 
-    // 
-    // small screen logo function
-    var smallScreenLogo = () =>{
+    // small screen nav title JSX
+    var SStitle = () =>{
+
+        var btn_s = {
+            border:'none',
+            outline:'none',
+            padding:'4px',
+            height:'100%',
+            margin:' 0px 43px',
+            backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
+            color: dynamicStyle$('#000',prop.darkMode_$,'#eee'),
+
+        }
         return(
             <a href="/" className="a_">
-                <button className={'btn_'}>
+                <button style={btn_s}>
                     FULL BUGS
                 </button>
             </a>
@@ -64,17 +65,18 @@ export function Navbar (prop){
     // 
 
 
-    var OptionsList = ()=>{
+    var SSoptions = ()=>{
 
         var ul_ = {
             position:'absolute',
-            left:'-16px',
-            top:'48px',
-            display:'flex',
+            left:'-12px',
+            top:'70px',
+            display:dynamicStyle$('flex',isNull$(appearance_$),'none'),
             flexDirection:'column',
             textAlign:'center',
             flexWrap:'wrap',
             padding:'0px',
+            boxShadow:'2px 2px 2px #ddd',
         }
         var a_0 = {
             minWidth:'50px',
@@ -87,8 +89,8 @@ export function Navbar (prop){
             transition:'all ease 550ms',
         }
         return(
-            <ul style={ul_} className={`ul_ ${!appearance_$ && 'none'}`}>
-                <a style={a_0} className='a_0' href="#">  Home </a>
+            <ul style={ul_} className={`${appearance_$ ? 'sho' : 'hid'}`}>
+                <a style={a_0} className='a_0' href="/#"> Home </a>
                 <a style={a_0} className='a_0' href="#">  About </a>
                 <a style={a_0} className='a_0' href="/">  Contact </a>
             </ul>
@@ -97,27 +99,31 @@ export function Navbar (prop){
 
     var OptionsBtnHandler = () => {
         setClicked_$(prev=>!prev)
-        setAppearance_$(prev=>!prev)
+        setAppearance_$(prev=> prev===null ? true : !prev)
     } 
 
     var btn_1 = {
         height:'100%',
-        borderRadius:'100%',
+        // borderRadius:'100%',
         padding:'2px 10px 0px 10px',
-        backgroundColor:'#fff',
+        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
         marginRight:'4px',
         border:'none',
         cursor:'pointer',
         transition:'all ease 550ms',
         position:'relative',
+        marginLeft:'12px',
+        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
+
+        
     }
 
-    var OptionsBtn = () =>{
+    var SSbtn = () =>{
 
         return(
             <button style={btn_1} className={'btn_1'} onClick={OptionsBtnHandler} >
                 <BsFillBugFill className={`transition  ${clicked_$ ? 'rotate180' : 'rotate_back'}`} />
-                {OptionsList()}
+                {SSoptions()}
             </button>
         )
     }
@@ -134,6 +140,7 @@ export function Navbar (prop){
         flexDirection:'row',
         height:'100%',
         margin:'0px',
+        padding:'0px',
     }
     var btn_5 = {
         position:'relative',
@@ -152,9 +159,9 @@ export function Navbar (prop){
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
-        padding: winWidth_$ < 429 ? '500px' : '0px' ,
-        height: dynamicStyle$('70px', prop.winWidth_$<width_427 ? true : false ,'50px'),
-        width:'100vw',
+        paddingLeft: dynamicStyle$('68px', condition_2(width_427,width_769,prop.winWidth_$),'0px',condition_1(width_427,width_769,prop.winWidth_$),'0px') ,
+        width:'100%',
+        height:'70px',
         position:'relative',
         boxShadow:dynamicStyle$('2px -2px 10px 2px rgba(100,100,100,0.6)',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
         zIndex:'4'
@@ -164,7 +171,7 @@ export function Navbar (prop){
         height:'100%',
         backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
         transition:'all ease 350ms',
-        padding:'6px 12px 2px 12px',
+        padding:dynamicStyle$('6px 18px 2px 18px', condition_2(width_427,width_769,prop.winWidth_$),'6px 6px 2px 8px'),
         border:'none',
         cursor:'pointer',
         color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
@@ -191,7 +198,8 @@ export function Navbar (prop){
             </button> 
             </Link>
 
-            {(prop.winWidth_$ < 427) ?   <OptionsBtn/>  : <div></div>}
+            {(prop.winWidth_$ < 428) ?   <SSbtn/>  : <div></div>}
+            {prop.winWidth_$ < 428 && SStitle()}
 
             <Link to={'/'}  className='link_'> 
             <button style={btns_s} className={ 'btn_4' }>
@@ -215,17 +223,16 @@ export function Navbar (prop){
                  </Link>
                 <Link to={'/about'}  className='link_'>
                     <button style={btns_s} className={'btn_4'}>
-                        About me
+                        About
                     </button>
                 </Link>
 
                 <Link to={'/contact'}  className='link_'>
                 <button style={btns_s} className={'btn_4'}>
-                    Contact me
+                    Contact
                 </button>
                 </Link>
 
-                {prop.winWidth_$ < 427 && smallScreenLogo()}
                 <button style={btn_2} className={ 'mode_' } onClick={toggleMode}>
                     {prop.darkMode_$ ? <FiSun/> :<FaRegMoon/>}
                 </button>
@@ -242,12 +249,14 @@ export  function Home_C0 ( prop ) {
     var outDiv_1 ={
         display:'flex',
         flexDirection:'row',
+        flexWrap:'wrap',
         alignItems:'center',
         justifyContent:'center',
         background:dynamicStyle$('transparenet', prop.darkMode_$,'#0d0c1d')
     }
     var in1Div_ = {
-        minWidth:'35vw',
+        position:'relative',
+        width:dynamicStyle$('45vw',condition_2(width_427,width_769,prop.winWidth_$),'100%', condition_1(width_427,width_769,prop.winWidth_$),'100%'),
         display:'flex',
         justifyContent:'flex-start',
         alignItems:'center',
@@ -256,7 +265,8 @@ export  function Home_C0 ( prop ) {
         zIndex:'2'
     }
     var img_s = {
-        width:'400px',
+        position:'relative',
+        width:dynamicStyle$('100%',condition_2(width_427,width_769,prop.winWidth_$),'100%',condition_1(width_427,width_769,prop.winWidth_$),'100%'),
         margin:'0px',
         height:'auto',
         borderRadius:'100%',
@@ -269,7 +279,7 @@ export  function Home_C0 ( prop ) {
         alignItems:'center',
         justifyContent:'center',
         padding:'20px',
-        width:'45vw',
+        width:dynamicStyle$('45vw',condition_2(width_427,width_769,prop.winWidth_$),'90%',condition_1(width_427,width_769,prop.winWidth_$),'100%'),
         margin:'0px 5px 0px 0px',
         postion:'relative',
     }
@@ -287,7 +297,7 @@ export  function Home_C0 ( prop ) {
     return(
         <div  style={outDiv_1}className={'outDiv_1'}>
 
-            <div style={in1Div_} className='image--'>
+            <div style={in1Div_}>
                 <img style={img_s}src={character_} className='img_s'></img>
             </div>
 
@@ -321,7 +331,7 @@ export function Home_C1 (prop){
             borderRadius:'12px',
             border:dynamicStyle$('1px solid #393',prop.darkMode_$,'1px solid #474973'),
             padding:'20px',
-            margin:'10px 12px',
+            margin:'10px 10px',
             boxShadow:dynamicStyle$('2px 1px 3px #393',prop.darkMode_$,'2px 1px 3px #474973'),
             width:'140px',
             height:'150px',
@@ -362,6 +372,7 @@ export function Home_C1 (prop){
         display:'flex',
         // 
         flexDirection:'column',
+        flexWrap:'wrap',
         alignItems:'center',
         justifyContent:'center',
         boxShadow:dynamicStyle$('2px 2px 10px -1px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px -2px rgba(20,20,20,0.6)'),
@@ -371,10 +382,12 @@ export function Home_C1 (prop){
     }
     var p1_s = {
         textDecoration:'underline',
-        color: dynamicStyle$('#222',prop.darkMode_$,'#f1dac4')
+        color: dynamicStyle$('#222',prop.darkMode_$,'#f1dac4'),
+        padding:'0px 20px',
+        textAlign:'center'
     }
     var outDiv_2 = {
-        width:'60vw',
+        // width:'60vw',
         display:'flex',
         flexDirection:'row',
         flexWrap:'wrap',
@@ -422,8 +435,8 @@ export function Home_C2 (prop){
         var img_source = x>0 ? pro.img_source : require('../imges/nodejs_wp.jpg')
 
         var outDiv_1 = {
-            margin:'8px 20px',
-            maxWidth:'282px',
+            margin:'8px 10px',
+            maxWidth:dynamicStyle$('282px',condition_2(width_427,width_769,prop.winWidth_$),'220px'),
             border:dynamicStyle$('1px solid #272',prop.darkMode_$,'1px solid #474973'),
             borderRadius:'8px',
             padding:'0px 0px 8px 0px',
@@ -503,13 +516,15 @@ export function Home_C2 (prop){
     var outDiv_s = {
         display:'flex',
         flexDirection:'column',
-        padding:'10px 80px',
+        justifyContent:'center',
+        // alignItems:'center',
+        padding:dynamicStyle$('10px 80px',condition_2(width_427,width_769,prop.winWidth_$),'10px',condition_1(width_427,width_769,prop.winWidth_$),'4px'),
         background: dynamicStyle$('transparent',prop.darkMode_$,'#0d0c1d')
     }
     var inDiv_2 = {
         display:'flex',
         alignItems:'center',
-        justifyContent:'flex-start',
+        justifyContent:dynamicStyle$('center',condition_2(width_427,width_769,prop.winWidth_$),'center'),
         flexDirection:'row',
         flexWrap:'wrap',
         padding:'0px 0px'
@@ -569,6 +584,7 @@ export function Contact ( prop ){
         display:'flex',
         flexWrap:'wrap',
         alignItems:'center',
+        justifyContent:dynamicStyle$('unset',condition_2(width_427,width_769,prop.winWidth_$),'center',condition_1(width_427,width_769,prop.winWidth_$),'center'),
         zIndex:'5',
         margin:'2em 0px ',
         boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
@@ -583,7 +599,7 @@ export function Contact ( prop ){
         flexDirection:'column',
         alignItems:'center',
         zIndex:'2',
-        margin:'2em 2em 0em 100px',
+        margin:dynamicStyle$('2em 2em 0em 100px',condition_2(width_427,width_769,prop.winWidth_$),'4px',condition_1(width_427,width_769,prop.winWidth_$),'2px'),
         border:'none',
         boxShadow:'5px 5px 7px -1px #333',
     }
@@ -601,7 +617,7 @@ export function Contact ( prop ){
         flexWrap:'wrap',
     }
     var input_1 = {
-        maxWidth:'174px',
+        maxWidth:dynamicStyle$('174px',condition_2(width_427,width_769,prop.winWidth_$),'92px',condition_1(width_427,width_769,prop.winWidth_$),'100px'),
         padding:'4px 12px',
         backgroundColor:'rgba(10,10,10,0.5)',
         // border:'none',
@@ -612,7 +628,7 @@ export function Contact ( prop ){
         letterSpacing:'1px'
     }
     var input_2 = {
-        width:'274px',
+        width:dynamicStyle$('274px',condition_2(width_427,width_769,prop.winWidth_$),'199px',condition_1(width_427,width_769,prop.winWidth_$),'174px'),
         padding:'4px 12px',
         backgroundColor:'rgba(10,10,10,0.5)',
         // border:'3px solid #ded',
@@ -629,7 +645,7 @@ export function Contact ( prop ){
         margin:'4px',
         color:'#fff',
         borderRadius:'20px',
-        width:'456px',
+        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
         textTransform:'uppercase',
         letterSpacing:'1px'
     }
@@ -641,14 +657,14 @@ export function Contact ( prop ){
         backgroundColor:'rgba(10,10,10,0.5)',
         resize:'none',
         color:'#fff',
-        width:'456px',
+        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
         borderWidth:'2px',
         borderStyle:'inset',
         textTransform:'uppercase',
         letterSpacing:'1px'
     }
     var btn_1 = {
-        width:'456px',
+        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
         background: 'linear-gradient(217deg, rgba(0,0,0,.8),rgba(2,0,0,0) 70.71%), linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)',
         border:'none',
         borderRadius:'12px',
@@ -783,7 +799,9 @@ export function Footer (prop){
 }
 export function Home_Interface (prop){
     var Home_Interface = {
-        background: dynamicStyle$('transparent', prop.darkMode_$,'#161b33')
+        background: dynamicStyle$('transparent', prop.darkMode_$,'#161b33'),
+        width:"100%",
+        overflowX:'hidden'
     }
     return(
 
