@@ -5,7 +5,7 @@ import './components/darked.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 // COMPONENTS
-import {Navbar} from './components/Home_';
+import {Footer, Navbar} from './components/Home_';
 import  { Home_Interface } from './components/Home_'
 import Features from './components/Features_'
 import Articles from './components/Articles_';
@@ -43,6 +43,7 @@ function App() {
       <Fragment>
         <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
         <Blog_Site darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+        <Footer darkMode_$={dark_$}/>
       </Fragment>
     )
   }
