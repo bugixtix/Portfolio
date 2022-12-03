@@ -76,14 +76,14 @@ export function Navbar (prop){
             textAlign:'center',
             flexWrap:'wrap',
             padding:'0px',
-            boxShadow:'2px 2px 2px #ddd',
+            boxShadow:dynamicStyle$('2px 2px 2px #ddd', prop.darkMode_$,'none'),
         }
         var a_0 = {
             minWidth:'50px',
             textDecoration:'none',
             padding:'12px',
-            backgroundColor:'rgba(300,300,300,0.65)',
-            color: dynamicStyle$('#000',prop.darkMode_$,'#eee'),
+            backgroundColor:'#edf2f4',
+            color: dynamicStyle$('#000',prop.darkMode_$,'#2b2e42'),
             fontWeight:'500',
             position:'relative',
             transition:'all ease 550ms',
@@ -113,9 +113,7 @@ export function Navbar (prop){
         transition:'all ease 550ms',
         position:'relative',
         marginLeft:'12px',
-        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
-
-        
+        color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#eee'),
     }
 
     var SSbtn = () =>{
@@ -154,22 +152,22 @@ export function Navbar (prop){
         minWidth:'0px',
     }    
     var header_s = {
-        backgroundColor:dynamicStyle$('rgba(100,100,300,0.05)',prop.darkMode_$, '#161b33'),
+        backgroundColor:dynamicStyle$('#edf2f4',prop.darkMode_$, '#161b33'),
         display: 'flex',
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
         paddingLeft: dynamicStyle$('68px', condition_2(width_427,width_769,prop.winWidth_$),'0px',condition_1(width_427,width_769,prop.winWidth_$),'0px') ,
-        width:'100%',
+        width:'99.9%',
         height:'70px',
         position:'relative',
-        boxShadow:dynamicStyle$('2px -2px 10px 2px rgba(100,100,100,0.6)',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
+        boxShadow:dynamicStyle$('2px -2px 10px 2px #bac0c1',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
         zIndex:'4'
     }
     var btns_s = {
         position:'relative',
         height:'100%',
-        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
+        backgroundColor:dynamicStyle$('#dce1e3',prop.darkMode_$,'#474973'),
         transition:'all ease 350ms',
         padding:dynamicStyle$('6px 18px 2px 18px', condition_2(width_427,width_769,prop.winWidth_$),'6px 6px 2px 8px'),
         border:'none',
@@ -768,7 +766,7 @@ export function Footer (prop){
         justifyContent:'center',
         flexDirection:'row',
         position:'relative',
-        left:'100px',
+        left:dynamicStyle$('100px',condition_1(width_427,width_769,prop.winWidth_$),'20px'),
     }
     var p_s = {
         textTransform:'uppercase',

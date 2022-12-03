@@ -4,7 +4,7 @@ import '../components/style.css'
 import './Blog_style.css'
 import nodejs_wp from '../imges/nodejs_wp.jpg'
 import {Home_C2} from '../components/Home_'
-import { dynamicStyle$ } from '../lainy'
+import { dynamicStyle$, _window427$, _window768$ } from '../lainy'
  
 export default function Blog_Site (prop) {
 
@@ -19,6 +19,7 @@ export default function Blog_Site (prop) {
         alignItems:'center',
         position:'relative',
         // overflow:'hidden'
+        background:dynamicStyle$('#fff',prop.darkMode_$,'#161b33')
     }
     var img_s = {
         width:'80%',
@@ -29,7 +30,7 @@ export default function Blog_Site (prop) {
     }
     var h2_s = {
         padding:'20px 4rem',
-        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#a69cac'),
+        background:dynamicStyle$('#edf2f4',prop.darkMode_$,'#a69cac'),
         position:'relative',
         textAlign:'center',
         width:'80%',
@@ -37,7 +38,7 @@ export default function Blog_Site (prop) {
     }
     var h2_1 = {
         padding:'10px 4rem',
-        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#a69cac'),
+        background:dynamicStyle$('#edf2f4',prop.darkMode_$,'#a69cac'),
         position:'relative',
         textAlign:'center',
         width:'80%',
@@ -45,36 +46,35 @@ export default function Blog_Site (prop) {
     }
     var h3_s = {
         padding:'12px 0.5rem',
-        background:dynamicStyle$('rgba(200,200,200,0.8)',prop.darkMode_$,'#474973'),
-        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4'),
-        width:'99.4%',
+        background:dynamicStyle$('#edf2f4',prop.darkMode_$,'#474973'),
+        color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#f1dac4'),
+        width:'100%',
         position:'relative',
-        boxShadow:dynamicStyle$('2px 2px 3px 3px #999',prop.darkMode_$,'2px 2px 3px 3px #000'),
+        boxShadow:dynamicStyle$('2px 2px 3px 3px #dce0e2',prop.darkMode_$,'2px 2px 3px 3px #000'),
     }
     var outDiv_2 = {
         display:'flex',
         flexWrap:'wrap',
-        flexDirection:'row',
-        alignItems:'flex-start',
+        flexDirection:dynamicStyle$('row',_window768$(),'column',_window427$(),'column'),
+        alignItems:dynamicStyle$('flex-start',_window768$(),'center',_window427$(),'center'),
         justifyContent:'center',
-        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#161b33'),
+        background:dynamicStyle$('#fff',prop.darkMode_$,'#161b33'),
         padding:'0px 0px 3rem 0px',
-        boxShadow:dynamicStyle$('2px 2px 4px 4px #999',prop.darkMode_$,'2px 2px 4px 4px #000'),
+        // boxShadow:dynamicStyle$('2px 4px 6px 2px #aaa',prop.darkMode_$,'2px 2px 4px 4px #000'),
     }
     var p_s = {
         padding:'8px 0.5rem 16px 0.5rem',
         letterSpacing:'1px',
         width:'100%',
-        background:'#eee',
         lineHeight:'1.8em',
-        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4'),
+        color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#f1dac4'),
         background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
     }
     var p_1 = {
         padding:'8px',
         letterSpacing:'1.8px',
         width:'100%',
-        background:'#fff',
+        background:dynamicStyle$('#fff',prop.darkMode_$,'#474973'),
         textAlign:'center',
         color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4') ,
     }
@@ -82,25 +82,25 @@ export default function Blog_Site (prop) {
         display:'flex',
         flexDirection:'column',
         flexWrap:'wrap',
-        width:'60vw',
+        width:dynamicStyle$('60vw',_window768$(),'90%',_window427$(),'90%'),
     }
     var in2Div_ = {
         display:'flex',
         flexDirection:'column',
         flexWrap:'wrap',
-        width:'16vw',
-        // position:'-webkit-sticky',
-        // position:'sticky',
-        // top:'0px',
+        width:dynamicStyle$('16vw',_window768$(),'80%',_window427$(),'80%'),
+        margin:dynamicStyle$('0px 0px 0px 1em', _window768$(),'1em 0px 0px 0px', _window427$(),'1em 0px 0px 0px'),
+        borderBottom:dynamicStyle$('none',_window768$(),'1px solid #2b2e42',_window427$(),'1px solid #2b2e42')
     }
     var img_1 = {
         width:'100%',
     }
     var in2Div_2 = {
-        // border:'20px solid rgba(200,200,200,0.9)',
+        border:dynamicStyle$('none',prop.darkMode_$,'1px solid #ff3'),
         margin:'0px 0px 20px 0px',
         // boxShadow:dynamicStyle$('-2px 2px 3px 3px #888, -2px 2px 3px 3px #888',prop.darkMode_$,'-2px 2px 3px 3px #222, -2px 2px 3px 3px #222'),
         position:'relative',
+        background:dynamicStyle$('#fff',prop.darkMode_$,'#000')
     }
     var in1Div_1 = {
         width:'100%',
@@ -117,7 +117,7 @@ export default function Blog_Site (prop) {
     }
     var img_p = {
         padding:'4px',
-        background:dynamicStyle$('rgba(200,200,200,0.7)',prop.darkMode_$,'#161b33'),
+        background:dynamicStyle$('#eee',prop.darkMode_$,'#161b33'),
         width:'100%',
         padding:'4px 0px 4px 0rem',
         textAlign:'center',
@@ -125,11 +125,22 @@ export default function Blog_Site (prop) {
     }
     var h4_s = {
         padding:'10px 0.5rem',
-        background:dynamicStyle$('rgba(200,200,200,0.7)',prop.darkMode_$,'#474973'),
-        boxShadow:dynamicStyle$('2px 2px 3px 3px #999',prop.darkMode_$,'2px 2px 3px 3px #000'),
+        background:dynamicStyle$('#edf2f4',prop.darkMode_$,'#474973'),
+        boxShadow:dynamicStyle$('1px 1px 4px 3px #dce0e2',prop.darkMode_$,'2px 2px 3px 3px #000'),
         position:'relative',
-        width:'99.4%',
+        width:'100%',
         color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4') ,
+    }
+    var _line = {
+        height:'0px',
+        padding:'8px 0px 0px 0px',
+        borderBottom:'1px solid #8d99ae',
+        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
+
+    }
+    var p_3 = {
+        padding:'8px 0px',
+        width:'auto'
     }
 
     // 
@@ -166,9 +177,11 @@ export default function Blog_Site (prop) {
             <p style={p_s}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
             <h4 style={h4_s}>CONCLUSION</h4>
             <p style={p_s}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+            <p style={_line}></p>
             </div>
             
             <div style={in2Div_}>
+                <p style={p_3} className='underline uppercase _600'>extra info</p>
                 <InfoBox />
                 <InfoBox />
             </div>

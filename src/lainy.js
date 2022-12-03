@@ -119,5 +119,5 @@ export var reStyle$ = (StyleArray) => {
 }
 export var dynamicStyle$ = (value, state, value1, state1, value2)=>state?value1:state1?value2:value
 
-
-// reStyle$(myR,1,2)
+export var _window427$ = (state=window.innerWidth) => state > 427 ? false : true
+export var _window768$ = (state=window.innerWidth) => (state <= 768) && (state > 427)

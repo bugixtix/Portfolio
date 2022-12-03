@@ -1,21 +1,15 @@
 
-import './App.css';
-import './components/darked.css'
+import './components/style.css';
 // Setting
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 // COMPONENTS
 import {Footer, Navbar} from './components/Home_';
 import  { Home_Interface } from './components/Home_'
-import Features from './components/Features_'
-import Articles from './components/Articles_';
-import Contact from './components/Contact_';
 import { Fragment } from 'react';
 import {useState, useEffect} from 'react';
 import Blog_Site from './blog/Blog_Site';
-import Home_C0 from './components/Home_';
 function App() {
-  // just checking
 
   let dark_local =  JSON.parse(localStorage.getItem('dark')) || false
   let [dark_$, setDark_$] = useState(dark_local)

@@ -6,7 +6,9 @@
     outline:none;
     border: none;      
 }
-
+.App{
+    overflow: hidden;
+}
 *{
     margin:0;
     padding: 0;
@@ -18,7 +20,8 @@
     background-color: rgba(150,150,250,0.5) !important;
 }.btn_4:focus{background-color: rgba(0, 0, 0, 0.5) !important; color:#fff;outline: none;}
 #c2_0:hover{
-    box-shadow:  4px 3px 2px -1px #666 !important;
+    box-shadow:  2px 2px 4px 2px #ef233c !important;
+    border: 1px solid #ef233c !important;
 }
 
 /* END OF MY NEW SPACE */
