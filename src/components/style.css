@@ -1,6 +1,7 @@
 /* Font */
 /*  */
 
+/*  */
 .link_, .link_:hover, .link_:focus{
     text-decoration: none;
     outline:none;
@@ -135,7 +136,7 @@ border-radius: 100%;
 
 ::placeholder{
     font-weight: 700;
-    color:#ddd;
+    color: #f1dac4;
 }
 #submit_:focus{
     transform: scale(0.94);

@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
-// Style
+import React, {useState}from "react";
 import './style.css'
-import './media-style.css'
-import './darked.css'
+import { dynamicStyle$, _window427$, _window768$ } from "../lainy";
 
-// icons
-import{GrTwitter} from 'react-icons/gr'
-import{FiGithub} from 'react-icons/fi'
-import{FaBlog} from 'react-icons/fa'
-
-export default function Contact ( prop ){
+export function Contact_ ( prop ){
 
 
     let [infos_$, setInfos_$] = useState({name:'', email:'', title:'', comment:''})
@@ -27,48 +19,170 @@ export default function Contact ( prop ){
         console.log(infos_$)
     }
 
+    var outDiv_1 = {
+        width:'100%',
+        height:'100vh',
+        position:'relative',
+        background:`${dynamicStyle$('linear-gradient(#000,#111)',!prop.darkMode_$,'linear-gradient(#e66465, #9198e5)')} ,url(${require('../imges/contact_I_bg.jpg')})`,
+        backgroundPosition:'left',
+        backgroundBlendMode:dynamicStyle$('saturation',!prop.darkMode_$,'darken'),
+        display:'flex',
+        flexWrap:'wrap',
+        alignItems:'center',
+        justifyContent:'center',
+        alignContent:'center',
+        zIndex:'5',
+        // margin:'2em 0px ',
+        boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
 
+    }
+    var in1Div_ = {
+    }
+    var fieldset_s = {
+        padding:'20px',
+        postion:'relative',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        zIndex:'2',
+        margin:dynamicStyle$('0em 2em 0em 2em',_window768$(),'4px',_window427$(),'2px'),
+        border:'none',
+        boxShadow:'5px 5px 7px -1px #333',
+        background:'#2b2e42bb',
+        
+    }
+    var legend_s = {
+        fontWeight:'600',
+        textShadow:'1px 2px #7ee',
+        padding:'4px 0px',
+        margin:'4px 6px',
+        borderRadius:'24px',
+        zIndex:'2',
+        
+    }
+    var inDiv_2 = {
+        display:'flex',
+        flexWrap:'wrap',
+    }
+    var input_1 = {
+        maxWidth:dynamicStyle$('174px',_window768$(),'92px',_window427$(),'100px'),
+        padding:'4px 12px',
+        background:'#161b3344',
+        // border:'none',
+        margin:'4px',
+        color:'#f1dac4',
+        borderRadius:'20px',
+        textTransform:'uppercase',
+        letterSpacing:'1px'
+    }
+    var input_2 = {
+        width:dynamicStyle$('274px',_window768$(),'199px',_window427$(),'174px'),
+        padding:'4px 12px',
+        backgroundColor:'#161b3344',
+        // border:'3px solid #ded',
+        margin:'4px',
+        color:'#f1dac4',
+        borderRadius:'20px',
+        textTransform:'uppercase',
+        letterSpacing:'1px'
+    }
+    var input_3 = {
+        padding:'4px 12px',
+        backgroundColor:'#161b3344',
+        // border:'2px solid #ded',
+        margin:'4px',
+        color:'#f1dac4',
+        borderRadius:'20px',
+        width:dynamicStyle$('456px',_window768$(),'300px',_window427$(),'274px'),
+        textTransform:'uppercase',
+        letterSpacing:'1px'
+    }
+    var input_4 = {
+        padding:'8px 12px',
+        margin:'4px',
+        height:'100px',
+        borderRadius:'20px',
+        backgroundColor:'#161b3344',
+        resize:'none',
+        color:'#f1dac4',
+        width:dynamicStyle$('456px',_window768$(),'300px',_window427$(),'274px'),
+        borderWidth:'2px',
+        borderStyle:'inset',
+        textTransform:'uppercase',
+        letterSpacing:'1px'
+    }
+    var btn_1 = {
+        width:dynamicStyle$('456px',_window768$(),'300px',_window427$(),'274px'),
+        background: 'linear-gradient(217deg, rgba(0,0,0,.8),rgba(2,0,0,0) 70.71%), linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)',
+        border:'none',
+        borderRadius:'12px',
+        padding:'8px',
+        margin:'4px 0px',
+        cursor:'pointer',
+        color:'#dee',
+        transition:'all ease 250ms',
+        textTransform:'uppercase',
+        letterSpacing:'2px'
+
+    }
+
+    var in2Div_ = {
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        flexDirection:'column',
+        padding:'8px',
+        background:'#f1dac4ee',
+        boxShadow:'5px 5px 7px -1px #333',
+        width:dynamicStyle$('auto', _window768$(), '348px', _window427$(), '348px')
+    }
+    var h2_s = {
+        padding:'4px 0px',
+        textAlign:'center'
+        // color:'#f1dac4'
+    }
+    var p_s = {
+        textAlign:'center'
+        // color:'#f1dac4'
+    }
     return(
-        <div  className={'contact_'}>
+        // className={'contact--'}
+        <div style={outDiv_1}>
             <br></br>
-            <div className='contact--extra--'>
+            {/*  className='contact--extra--' */}
+            {/* <div style={outDiv_2}>
 
+            </div> */}
+            <div style={in2Div_}>
+                <h2 style={h2_s} className={'uppercase _600'}>you have something in mind?</h2>
+                <p style={p_s} className={'uppercase _26 _600'}>well send me a message</p>
             </div>
-            <div className={'form_icons'}>
-            <form className='contact--form' onSubmit={handleSubmit}>
-                <fieldset className='contact--form'>
-                <legend className='feedback_'>Feedback</legend>
-                <div className='name_email_--'>
-
-                <input type='text' name='name' id={'name_'} placeholder='Name' required value={infos_$.name} onChange={handleChange} />
-                <input type='email' id={'email_'} placeholder='email' name='email' value={infos_$.email} onChange={handleChange} />
+            {/* className={'form_icons'} */}
+            <div style={in1Div_}>
+                {/* className='contact--form' */}
+            <form onSubmit={handleSubmit}>
+                {/*  className='contact--form' */}
+                <fieldset style={fieldset_s}>
+                {/* className='feedback_' */}
+                {/* <legend style={legend_s}>Feedback</legend> */}
+                {/* className='name_email_--' */}
+                <div style={inDiv_2}>
+                    {/* id={'name_'} ; id={'email_'}*/ }
+                <input style={input_1} type='text' name='name' placeholder='your name' required value={infos_$.name} onChange={handleChange} />
+                <input style={input_2} type='email' name='email' placeholder='your email' required value={infos_$.email} onChange={handleChange} />
                 </div>
-                <input type='text' id={'title_'} placeholder='Comment-title' name='title' value={infos_$.title} onChange={handleChange} />
-                <textarea type='comment' id={'comment_'} className='comment_' placeholder='Comment' name='comment' value={infos_$.comment} onChange={handleChange} required/>
-                <button type='submit' id={'submit_'}>send</button>
+                {/*  id={'title_'};id={'comment_'};id={'submit_'}; */}
+                <input style={input_3} type='text' placeholder='subject' name='title' value={infos_$.title} onChange={handleChange} />
+                <textarea style={input_4} type='comment'  className='comment_' placeholder='message' name='comment' value={infos_$.comment} onChange={handleChange} required/>
+                <button style={btn_1} type='submit'>send message</button>
                 </fieldset>
             </form>
 
-            <ul className='contact_icons--'>
-                <a href={'https://twitter.com/bugy_ixtix'} target="blank">
-                    <li  className={`icon_I ${'contact_icon_'}`}>
-                        <GrTwitter/>
-                    </li>
-                </a>
-                <a href={'https://github.com/bugixtix'} target='blank'>
-                    <li className='contact_icon_ icon_II'>
-                        <FiGithub/>
-                    </li>
-                </a>
-
-                <a href={'#'} target='blank'>
-                <li className='contact_icon_ icon_III'>
-                    <FaBlog/>
-                </li>
-                </a>
-
-            </ul>
+            {/* className='contact_icons--' */}
+            
             </div>
+
+            
 
         </div>
     )

@@ -9,6 +9,8 @@ import  { Home_Interface } from './components/Home_'
 import { Fragment } from 'react';
 import {useState, useEffect} from 'react';
 import Blog_Site from './blog/Blog_Site';
+import About_ from './components/About_';
+import { Contact_ } from './components/Contact_';
 function App() {
 
   let dark_local =  JSON.parse(localStorage.getItem('dark')) || false
@@ -49,6 +51,25 @@ function App() {
     )
   }
 
+  let About = () =>{
+    return(
+      <Fragment>
+        <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+        <About_ darkMode_$={dark_$} winWidth_$={winWidth_$}/>
+        <Footer darkMode_$={dark_$}/>
+      </Fragment>
+    )
+  }
+
+  let Contact = () => {
+    return(
+    <Fragment>
+      <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+      <Contact_ darkMode_$={dark_$}/>
+      <Footer darkMode_$={dark_$}/>
+    </Fragment>
+    )
+  }
   return (
     <BrowserRouter>
     <div className="App">
@@ -56,6 +77,8 @@ function App() {
       <Route path="/" exact element={<Dom/> } /> 
       <Route path='/abc' exact element={<Abc/>} />
       <Route path='/article' exact element={<Blog/>}/>
+      <Route path='/about' exact element={<About/>}/>
+      <Route path='/contact' exact element={<Contact/>}/>
     </Routes>
     </div>
      </BrowserRouter> 

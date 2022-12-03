@@ -5,13 +5,14 @@ import './style.css'
 // IMGS // ICONS
 import character_ from '../imges/character_.svg';
 import { useState, useEffect } from "react";
-import{GrTwitter} from 'react-icons/gr'
-import{FiGithub} from 'react-icons/fi'
-import{FaBlog} from 'react-icons/fa'
 import {BsBug, BsFillBugFill} from 'react-icons/bs'
 import {FiSun} from 'react-icons/fi'
 import {FaEuroSign, FaRegMoon,FaCopyright} from 'react-icons/fa'
-import { reStyle$, dynamicStyle$, isNull$ } from '../lainy'
+import { reStyle$, dynamicStyle$, isNull$, _window768$, _window427$ } from '../lainy'
+import{GrTwitter} from 'react-icons/gr'
+import{FiGithub} from 'react-icons/fi'
+import{FaBlog} from 'react-icons/fa'
+
 
 let width_427 = 427
 let width_769 = 769
@@ -556,172 +557,66 @@ export function Home_C2 (prop){
     )
 }
 
-export function Contact ( prop ){
 
+export function Footer (prop){
 
-    let [infos_$, setInfos_$] = useState({name:'', email:'', title:'', comment:''})
-
-    var handleChange = (event) => {
-        const {name, value, type} = event.target
-        setInfos_$((prev)=>({
-            ...prev, [name] : value
-        }))
-    }
-
-    var handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(infos_$)
-    }
-
-    var outDiv_1 = {
-        width:'100%',
-        position:'relative',
-        background:`${dynamicStyle$('linear-gradient(#999,#000)',prop.darkMode_$,'linear-gradient(#666,#777)')}, url(${require('../imges/contact_I_bg.jpg')})`,
-        backgroundPosition:'left',
-        backgroundBlendMode:dynamicStyle$('saturation',prop.darkMode_$,'darken'),
+    var outDiv_s = {
         display:'flex',
-        flexWrap:'wrap',
+        flexDirection:'row',
         alignItems:'center',
-        justifyContent:dynamicStyle$('unset',condition_2(width_427,width_769,prop.winWidth_$),'center',condition_1(width_427,width_769,prop.winWidth_$),'center'),
-        zIndex:'5',
-        margin:'2em 0px ',
-        boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
-
+        justifyContent:'space-between',
+        height:'50px',
+        background:dynamicStyle$('#fe4',prop.darkMode_$,'#a69cac')
     }
     var inDiv_1 = {
-    }
-    var fieldset_s = {
-        padding:'20px',
-        postion:'relative',
         display:'flex',
-        flexDirection:'column',
         alignItems:'center',
-        zIndex:'2',
-        margin:dynamicStyle$('2em 2em 0em 100px',condition_2(width_427,width_769,prop.winWidth_$),'4px',condition_1(width_427,width_769,prop.winWidth_$),'2px'),
-        border:'none',
-        boxShadow:'5px 5px 7px -1px #333',
+        justifyContent:'center',
+        flexDirection:'row',
+        position:'relative',
+        padding:dynamicStyle$('0px 0px 0px 2em',_window768$(),'0px 0px 0px 1em', _window427$(),'4px')
     }
-    var legend_s = {
-        fontWeight:'600',
-        textShadow:'1px 2px #7ee',
-        padding:'4px 0px',
-        margin:'4px 6px',
-        borderRadius:'24px',
-        zIndex:'2',
-        
-    }
-    var inDiv_2 = {
-        display:'flex',
-        flexWrap:'wrap',
-    }
-    var input_1 = {
-        maxWidth:dynamicStyle$('174px',condition_2(width_427,width_769,prop.winWidth_$),'92px',condition_1(width_427,width_769,prop.winWidth_$),'100px'),
-        padding:'4px 12px',
-        backgroundColor:'rgba(10,10,10,0.5)',
-        // border:'none',
-        margin:'4px',
-        color:'#fff',
-        borderRadius:'20px',
+    var p_s = {
         textTransform:'uppercase',
-        letterSpacing:'1px'
+        letterSpacing:'2px',
+        padding:'0px 4px'
     }
-    var input_2 = {
-        width:dynamicStyle$('274px',condition_2(width_427,width_769,prop.winWidth_$),'199px',condition_1(width_427,width_769,prop.winWidth_$),'174px'),
-        padding:'4px 12px',
-        backgroundColor:'rgba(10,10,10,0.5)',
-        // border:'3px solid #ded',
-        margin:'4px',
-        color:'#fff',
-        borderRadius:'20px',
-        textTransform:'uppercase',
-        letterSpacing:'1px'
-    }
-    var input_3 = {
-        padding:'4px 12px',
-        backgroundColor:'rgba(10,10,10,0.5)',
-        // border:'2px solid #ded',
-        margin:'4px',
-        color:'#fff',
-        borderRadius:'20px',
-        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
-        textTransform:'uppercase',
-        letterSpacing:'1px'
-    }
-    var input_4 = {
-        padding:'8px 12px',
-        margin:'4px',
-        height:'100px',
-        borderRadius:'20px',
-        backgroundColor:'rgba(10,10,10,0.5)',
-        resize:'none',
-        color:'#fff',
-        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
-        borderWidth:'2px',
-        borderStyle:'inset',
-        textTransform:'uppercase',
-        letterSpacing:'1px'
-    }
-    var btn_1 = {
-        width:dynamicStyle$('456px',condition_2(width_427,width_769,prop.winWidth_$),'300px',condition_1(width_427,width_769,prop.winWidth_$),'274px'),
-        background: 'linear-gradient(217deg, rgba(0,0,0,.8),rgba(2,0,0,0) 70.71%), linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)',
-        border:'none',
-        borderRadius:'12px',
-        padding:'8px',
-        margin:'4px 0px',
-        cursor:'pointer',
-        color:'#dee',
-        transition:'all ease 250ms',
-        textTransform:'uppercase',
-        letterSpacing:'2px'
-
-    }
-
+    
     var ul_s = {
         display:'flex',
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
-        minHeight:'50px',
+        // minHeight:'50px',
         listStyle:'none',
         position:'relative',
+        padding:'0px 2em 0px 0em'
     }
     var li_s = {
         padding:'8px 8px 2px 8px',
         background:'#000',
         borderRadius:'50%',
-        margin:'8px 12px 12px 12px',
+        margin:dynamicStyle$('0px 12px 0px 12px',_window768$(),'0px 8px 0px 8px',_window427$(),'0px 4px'),
         cursor:'pointer',
     }
+
     return(
-        // className={'contact--'}
-        <div style={outDiv_1}>
-            <br></br>
-            {/*  className='contact--extra--' */}
-            {/* <div style={outDiv_2}>
 
-            </div> */}
-            {/* className={'form_icons'} */}
+        <div style={outDiv_s}>
+
             <div style={inDiv_1}>
-                {/* className='contact--form' */}
-            <form onSubmit={handleSubmit}>
-                {/*  className='contact--form' */}
-                <fieldset style={fieldset_s}>
-                {/* className='feedback_' */}
-                <legend style={legend_s}>Feedback</legend>
-                {/* className='name_email_--' */}
-                <div style={inDiv_2}>
-                    {/* id={'name_'} ; id={'email_'}*/ }
-                <input style={input_1} type='text' name='name' placeholder='Name' required value={infos_$.name} onChange={handleChange} />
-                <input style={input_2} type='email' name='email' placeholder='email' required value={infos_$.email} onChange={handleChange} />
-                </div>
-                {/*  id={'title_'};id={'comment_'};id={'submit_'}; */}
-                <input style={input_3} type='text' placeholder='title' name='title' value={infos_$.title} onChange={handleChange} />
-                <textarea style={input_4} type='comment'  className='comment_' placeholder='Comment' name='comment' value={infos_$.comment} onChange={handleChange} required/>
-                <button style={btn_1} type='submit'>send</button>
-                </fieldset>
-            </form>
 
-            {/* className='contact_icons--' */}
+            <BsBug/>
+            <p style={p_s}>
+                ixtix 
+            </p>
+            <FaCopyright/>
+            <p style={p_s}>
+                2022
+            </p>
+
+            </div>
+
             <ul style={ul_s}>
                 <a href={'https://twitter.com/bugy_ixtix'} target="blank">
                     {/*   className={`icon_I ${'contact_icon_'}`} */}
@@ -744,52 +639,6 @@ export function Contact ( prop ){
                 </a>
 
             </ul>
-            </div>
-
-        </div>
-    )
-}
-
-export function Footer (prop){
-
-    var outDiv_s = {
-        display:'flex',
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'flex-start',
-        height:'50px',
-        background:dynamicStyle$('#fe4',prop.darkMode_$,'#a69cac')
-    }
-    var inDiv_1 = {
-        display:'flex',
-        alignItems:'center',
-        justifyContent:'center',
-        flexDirection:'row',
-        position:'relative',
-        left:dynamicStyle$('100px',condition_1(width_427,width_769,prop.winWidth_$),'20px'),
-    }
-    var p_s = {
-        textTransform:'uppercase',
-        letterSpacing:'2px',
-        padding:'0px 4px'
-    }
-
-    return(
-
-        <div style={outDiv_s}>
-
-            <div style={inDiv_1}>
-
-            <BsBug/>
-            <p style={p_s}>
-                ixtix 
-            </p>
-            <FaCopyright/>
-            <p style={p_s}>
-                2022
-            </p>
-
-            </div>
 
         </div>
 
@@ -809,7 +658,7 @@ export function Home_Interface (prop){
         <Home_C0 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
         <Home_C1 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
         <Home_C2 darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
-        <Contact darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
+        {/* <Contact darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} /> */}
         <Footer  darkMode_$={prop.darkMode_$} winWidth_$={prop.winWidth_$} />
 
         </div>
