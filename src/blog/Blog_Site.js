@@ -1,72 +1,74 @@
 import React from 'react'
 
 import '../components/style.css'
+import './Blog_style.css'
 import nodejs_wp from '../imges/nodejs_wp.jpg'
 import {Home_C2} from '../components/Home_'
+import { dynamicStyle$ } from '../lainy'
  
 export default function Blog_Site (prop) {
 
-
-    var Article_info = () =>{
-        return(
-            <span className='article_info'>
-            <span className='padding_I tag_'>tag</span>
-            <span className='padding_I date_'>date</span>
-            <span className='padding_I writer_'>writer</span>
-            <span className='padding_I readTime_'>time to read</span>
-        </span>
-        )
-    }
+    // STYLE§
 
     var outDiv_1 = {
         maxWidth:'100vw',
-        height:'80vh',
+        // height:'80vh',
         display:'flex',
         flexDirection:'column',
         justifyContent:'center',
+        alignItems:'center',
         position:'relative',
         // overflow:'hidden'
     }
     var img_s = {
-        width:'100%',
-        minHeight:'80%',
+        width:'80%',
+        maxHeight:'80%',
         objectFit:'cover',
         position:'relative',
-        boxShadow:'2px 2px 3px 3px #444'
-
+        padding:'2em 0px'
     }
     var h2_s = {
-        padding:'20px 8rem',
-        background:'rgba(200,200,200,0.5)',
-        // boxShadow:'2px 2px 3px 3px #999'
+        padding:'20px 4rem',
+        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#a69cac'),
         position:'relative',
-
-
+        textAlign:'center',
+        width:'80%',
+        margin:'2em 0px 0em 0px'
+    }
+    var h2_1 = {
+        padding:'10px 4rem',
+        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#a69cac'),
+        position:'relative',
+        textAlign:'center',
+        width:'80%',
+        margin:'0em 0px 0em 0px'
     }
     var h3_s = {
-        padding:'12px 8rem',
-        background:'rgba(200,200,200,0.8)',
+        padding:'12px 0.5rem',
+        background:dynamicStyle$('rgba(200,200,200,0.8)',prop.darkMode_$,'#474973'),
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4'),
         width:'99.4%',
         position:'relative',
-        boxShadow:'2px 2px 3px 3px #999',
+        boxShadow:dynamicStyle$('2px 2px 3px 3px #999',prop.darkMode_$,'2px 2px 3px 3px #000'),
     }
     var outDiv_2 = {
         display:'flex',
         flexWrap:'wrap',
         flexDirection:'row',
         alignItems:'flex-start',
-        justifyContent:'flex-start',
-        background:'rgba(200,200,200,0.5)',
+        justifyContent:'center',
+        background:dynamicStyle$('rgba(200,200,200,0.5)',prop.darkMode_$,'#161b33'),
         padding:'0px 0px 3rem 0px',
-        boxShadow:'2px 2px 4px 4px #999',
-        margin:'0px 0px 1rem 0px'
+        boxShadow:dynamicStyle$('2px 2px 4px 4px #999',prop.darkMode_$,'2px 2px 4px 4px #000'),
     }
     var p_s = {
-        padding:'8px 4rem 16px 8rem',
+        padding:'8px 0.5rem 16px 0.5rem',
         letterSpacing:'1px',
         width:'100%',
         background:'#eee',
-        lineHeight:'1.8em'
+        lineHeight:'1.8em',
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4'),
+        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
     }
     var p_1 = {
         padding:'8px',
@@ -74,33 +76,31 @@ export default function Blog_Site (prop) {
         width:'100%',
         background:'#fff',
         textAlign:'center',
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4') ,
     }
     var in1Div_ = {
         display:'flex',
         flexDirection:'column',
         flexWrap:'wrap',
-        width:'70vw',
-
+        width:'60vw',
     }
     var in2Div_ = {
         display:'flex',
         flexDirection:'column',
         flexWrap:'wrap',
-        width:'18vw',
-        position:'-webkit-sticky',
-        position:'sticky',
-        top:'0px',
-        
+        width:'16vw',
+        // position:'-webkit-sticky',
+        // position:'sticky',
+        // top:'0px',
     }
     var img_1 = {
         width:'100%',
     }
     var in2Div_2 = {
-        border:'20px solid rgba(200,200,200,0.9)',
+        // border:'20px solid rgba(200,200,200,0.9)',
         margin:'0px 0px 20px 0px',
-        boxShadow:'-2px 2px 3px 3px #888, -2px 2px 3px 3px #888',
+        // boxShadow:dynamicStyle$('-2px 2px 3px 3px #888, -2px 2px 3px 3px #888',prop.darkMode_$,'-2px 2px 3px 3px #222, -2px 2px 3px 3px #222'),
         position:'relative',
-
     }
     var in1Div_1 = {
         width:'100%',
@@ -109,27 +109,27 @@ export default function Blog_Site (prop) {
         justifyContent:'center',
         flexWrap:'wrap',
         flexDirection:'column',
-        // padding:'0px 0px 0px 8rem'
     }
     var img_2 = {
         width:'80%',
-        padding:'0px 0px 0px 4rem'
+        padding:'20px 0px 0px 0rem',
+
     }
     var img_p = {
         padding:'4px',
-        background:'rgba(200,200,200,0.7)',
+        background:dynamicStyle$('rgba(200,200,200,0.7)',prop.darkMode_$,'#161b33'),
         width:'100%',
-        padding:'4px 0px 4px 4rem',
+        padding:'4px 0px 4px 0rem',
         textAlign:'center',
-        color:'#666'
+        color:dynamicStyle$('#666',prop.darkMode_$,'#f1dac4') ,
     }
     var h4_s = {
-        padding:'10px 8rem',
-        background:'rgba(200,200,200,0.7)',
-        boxShadow:'2px 2px 3px 3px #999',
+        padding:'10px 0.5rem',
+        background:dynamicStyle$('rgba(200,200,200,0.7)',prop.darkMode_$,'#474973'),
+        boxShadow:dynamicStyle$('2px 2px 3px 3px #999',prop.darkMode_$,'2px 2px 3px 3px #000'),
         position:'relative',
         width:'99.4%',
-
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4') ,
     }
 
     // 
@@ -148,8 +148,9 @@ export default function Blog_Site (prop) {
     <div className='Blog_Site'>
 
         <div style={outDiv_1}>
+            <h2 style={h2_s} className={'uppercase'}>intro to nodejs</h2>
+            <h2 style={h2_1} className={'uppercase italic _26'}>infos that maybe you dont know yet about nodejs</h2>
             <img style={img_s} src={nodejs_wp}></img>
-            <h2 style={h2_s}>some things</h2>
         </div>
 
         <div style={outDiv_2}>
@@ -175,15 +176,4 @@ export default function Blog_Site (prop) {
         <Home_C2 darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$}/>
     </div>
 )
-}
-
-function Side () {
-
-    return(
-    <div className='blog_side'>
-        <img className='side_image' src={nodejs_wp}></img>
-        <div className='side_titel'>side Title / did you know</div>
-        <div className='side_text'>side Text / learning react makes it easier to compile the fron- and end-side</div>
-    </div>  
-    )
 }

@@ -518,7 +518,7 @@ export function Home_C2 (prop){
         flexDirection:'column',
         justifyContent:'center',
         // alignItems:'center',
-        padding:dynamicStyle$('10px 80px',condition_2(width_427,width_769,prop.winWidth_$),'10px',condition_1(width_427,width_769,prop.winWidth_$),'4px'),
+        padding:dynamicStyle$('30px 80px',condition_2(width_427,width_769,prop.winWidth_$),'10px',condition_1(width_427,width_769,prop.winWidth_$),'4px'),
         background: dynamicStyle$('transparent',prop.darkMode_$,'#0d0c1d')
     }
     var inDiv_2 = {
