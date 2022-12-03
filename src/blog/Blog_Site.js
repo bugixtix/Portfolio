@@ -64,7 +64,7 @@ export default function Blog_Site (prop) {
     }
     var p_s = {
         padding:'8px 0.5rem 16px 0.5rem',
-        letterSpacing:'1px',
+        letterSpacing:'0.4px',
         width:'100%',
         lineHeight:'1.8em',
         color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#f1dac4'),
@@ -135,12 +135,18 @@ export default function Blog_Site (prop) {
         height:'0px',
         padding:'8px 0px 0px 0px',
         borderBottom:'1px solid #8d99ae',
-        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
-
+        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d'),
+    }
+    var _space ={
+        height:'0px',
+        padding:'20px',
+        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d'),
     }
     var p_3 = {
         padding:'8px 0px',
-        width:'auto'
+        width:'auto',
+        color:dynamicStyle$('#000',prop.darkMode_$,'#f1dac4') ,
+
     }
 
     // 
@@ -187,6 +193,7 @@ export default function Blog_Site (prop) {
             </div>
         </div>
         <Home_C2 darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$}/>
+        <p style={_space}></p>
     </div>
 )
 }

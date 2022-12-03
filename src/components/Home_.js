@@ -537,7 +537,7 @@ export function Home_C2 (prop){
         textTransform:'uppercase',
         textDecoration:'underline',
         letterSpacing:'2px',
-        margin:'8px 20px',
+        margin:'8px 2em',
         color: dynamicStyle$('#222',prop.darkMode_$,'#f1dac4')
     }
     return(
