@@ -15,6 +15,7 @@ function App() {
 
   let dark_local =  JSON.parse(localStorage.getItem('dark')) || false
   let [dark_$, setDark_$] = useState(dark_local)
+  let [page_$, setPage_$] = useState('')
   
   let [winWidth_$, setWinWidth_$] = useState(window.innerWidth)
   let setWindowWidth = () => {
@@ -38,7 +39,7 @@ function App() {
     return(
       <Fragment>
         <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
-        <Blog_Site darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+        <Blog_Site darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$} />
         <Footer darkMode_$={dark_$}/>
       </Fragment>
     )
@@ -46,7 +47,7 @@ function App() {
   let Dom = () =>{
     return(
       <Fragment>
-        <Home_Interface darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
+        <Home_Interface darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$} />
       </Fragment>
     )
   }
@@ -54,8 +55,8 @@ function App() {
   let About = () =>{
     return(
       <Fragment>
-        <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
-        <About_ darkMode_$={dark_$} winWidth_$={winWidth_$}/>
+        {/* <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/> */}
+        <About_ darkMode_$={dark_$} winWidth_$={winWidth_$} setDarkMode_$={setDark_$} />
         <Footer darkMode_$={dark_$}/>
       </Fragment>
     )
@@ -64,8 +65,8 @@ function App() {
   let Contact = () => {
     return(
     <Fragment>
-      <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
-      <Contact_ darkMode_$={dark_$}/>
+      {/* <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/> */}
+      <Contact_ darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} />
       <Footer darkMode_$={dark_$}/>
     </Fragment>
     )

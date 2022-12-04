@@ -17,7 +17,7 @@
 }
 
 /* MY NEW SPACE */
-.btn_4:hover{
+.btn_4:hover,.mode_:hover{
     background-color: rgba(150,150,250,0.5) !important;
 }.btn_4:focus{background-color: rgba(0, 0, 0, 0.5) !important; color:#fff;outline: none;}
 #c2_0:hover{

@@ -1,17 +1,24 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { dynamicStyle$, _window427$, _window768$ } from "../lainy";
+import { Navbar } from "./Home_";
 import './style.css'
 
 export default function About_ (prop){
 
+
+    var main_ = {
+        width:'100%',
+        // height:dynamicStyle$('90vh',_window768$(),'auto',_window427$(),'auto'),
+        height:dynamicStyle$('100vh',_window768$(),'auto',_window427$(),'auto'),
+        background:'#7E89FD',
+        
+    }
     var outDiv_s = {
-        height:dynamicStyle$('90vh',_window768$(),'auto',_window427$(),'auto'),
-        width:'100vw',
+        width:'100%',
         display:'flex',
         flexDirection:dynamicStyle$('row',_window768$(),'column',_window427$(),'column'),
         alignItems:'center',
         justifyContent:'center',
-        background:'#7E89FD',
         padding:dynamicStyle$('0px',_window768$(),'2em 0em 0em 0em', _window427$(),'2em 0em 0em 0em')
     }
     var in1Div_ = {
@@ -40,6 +47,8 @@ export default function About_ (prop){
         color:'#fff'
     }
     return(
+        <div style={main_}>
+            <Navbar darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$}/>
         <div style={outDiv_s}>
             <div style={in1Div_}>
                 <h2 style={h2_s} className={'uppercase _42 _600'}>about us</h2>
@@ -48,6 +57,7 @@ export default function About_ (prop){
             <div style={in2Div_}>
             <img style={img_s} src={require('../imges/webdev.jpg')}></img>
             </div>
+        </div>
         </div>
     )
 }

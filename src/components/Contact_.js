@@ -1,7 +1,7 @@
-import React, {useState}from "react";
+import React, {useEffect, useState}from "react";
 import './style.css'
 import { dynamicStyle$, _window427$, _window768$ } from "../lainy";
-
+import {Navbar} from './Home_'
 export function Contact_ ( prop ){
 
 
@@ -18,8 +18,7 @@ export function Contact_ ( prop ){
         event.preventDefault()
         console.log(infos_$)
     }
-
-    var outDiv_1 = {
+    var main_ = {
         width:'100%',
         height:'100vh',
         position:'relative',
@@ -27,13 +26,24 @@ export function Contact_ ( prop ){
         backgroundPosition:'left',
         backgroundBlendMode:dynamicStyle$('saturation',!prop.darkMode_$,'darken'),
         display:'flex',
+        flexDirection:'column',
+    }
+    var outDiv_1 = {
+        width:'100%',
+        height:'90%',
+        position:'relative',
+        // background:`${dynamicStyle$('linear-gradient(#000,#111)',!prop.darkMode_$,'linear-gradient(#e66465, #9198e5)')} ,url(${require('../imges/contact_I_bg.jpg')})`,
+        // backgroundPosition:'left',
+        // backgroundBlendMode:dynamicStyle$('saturation',!prop.darkMode_$,'darken'),
+        display:'flex',
         flexWrap:'wrap',
         alignItems:'center',
         justifyContent:'center',
         alignContent:'center',
-        zIndex:'5',
+        zIndex:'1',
+
         // margin:'2em 0px ',
-        boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
+        // boxShadow:dynamicStyle$('2px 2px 10px 4px rgba(100,100,100,0.8)',prop.darkMode_$,'2px 2px 6px 4px rgba(20,20,20,0.6)'),
 
     }
     var in1Div_ = {
@@ -146,7 +156,12 @@ export function Contact_ ( prop ){
         // color:'#f1dac4'
     }
     return(
-        // className={'contact--'}
+
+        <div style={main_}> 
+
+        <Navbar darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$} page_$={prop.page_$}/>
+
+        {/* // className={'contact--'} */}
         <div style={outDiv_1}>
             <br></br>
             {/*  className='contact--extra--' */}
@@ -182,7 +197,7 @@ export function Contact_ ( prop ){
             
             </div>
 
-            
+        </div>
 
         </div>
     )

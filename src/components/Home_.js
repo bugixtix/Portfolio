@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import {BsBug, BsFillBugFill} from 'react-icons/bs'
 import {FiSun} from 'react-icons/fi'
 import {FaEuroSign, FaRegMoon,FaCopyright} from 'react-icons/fa'
-import { reStyle$, dynamicStyle$, isNull$, _window768$, _window427$ } from '../lainy'
+import { reStyle$, dynamicStyle$, isNull$, _window768$, _window427$, notdo$ } from '../lainy'
 import{GrTwitter} from 'react-icons/gr'
 import{FiGithub} from 'react-icons/fi'
 import{FaBlog} from 'react-icons/fa'
@@ -51,13 +51,13 @@ export function Navbar (prop){
             padding:'4px',
             height:'100%',
             margin:' 0px 43px',
-            backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
-            color: dynamicStyle$('#000',prop.darkMode_$,'#eee'),
+            backgroundColor:'transparent',
+            color: dynamicStyle$('#fff',prop.darkMode_$,'#eee'),
 
         }
         return(
             <a href="/" className="a_">
-                <button style={btn_s}>
+                <button style={btn_s} className={'btn_4'}>
                     FULL BUGS
                 </button>
             </a>
@@ -71,29 +71,30 @@ export function Navbar (prop){
         var ul_ = {
             position:'absolute',
             left:'-12px',
-            top:'70px',
+            top:'62px',
             display:dynamicStyle$('flex',isNull$(appearance_$),'none'),
             flexDirection:'column',
             textAlign:'center',
             flexWrap:'wrap',
             padding:'0px',
-            boxShadow:dynamicStyle$('2px 2px 2px #ddd', prop.darkMode_$,'none'),
+            boxShadow:dynamicStyle$('1px 1px 2px #ddd', prop.darkMode_$,'none'),
         }
         var a_0 = {
             minWidth:'50px',
             textDecoration:'none',
             padding:'12px',
-            backgroundColor:'#edf2f4',
+            backgroundColor:'#edf2f4cc',
             color: dynamicStyle$('#000',prop.darkMode_$,'#2b2e42'),
             fontWeight:'500',
             position:'relative',
             transition:'all ease 550ms',
+            zIndex:'999'
         }
         return(
             <ul style={ul_} className={`${appearance_$ ? 'sho' : 'hid'}`}>
-                <a style={a_0} className='a_0' href="/#"> Home </a>
-                <a style={a_0} className='a_0' href="#">  About </a>
-                <a style={a_0} className='a_0' href="/">  Contact </a>
+                <a style={a_0} className='a_0' href="/home"> Home </a>
+                <a style={a_0} className='a_0' href="/about">  About </a>
+                <a style={a_0} className='a_0' href="/contact">  Contact </a>
             </ul>
         )
     }
@@ -107,20 +108,20 @@ export function Navbar (prop){
         height:'100%',
         // borderRadius:'100%',
         padding:'2px 10px 0px 10px',
-        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
+        backgroundColor:'transparent',
         marginRight:'4px',
         border:'none',
         cursor:'pointer',
         transition:'all ease 550ms',
         position:'relative',
         marginLeft:'12px',
-        color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#eee'),
+        color:dynamicStyle$('#fff',prop.darkMode_$,'#eee'),
     }
 
     var SSbtn = () =>{
 
         return(
-            <button style={btn_1} className={'btn_1'} onClick={OptionsBtnHandler} >
+            <button style={btn_1} className={'btn_1 btn_4'} onClick={OptionsBtnHandler} >
                 <BsFillBugFill className={`transition  ${clicked_$ ? 'rotate180' : 'rotate_back'}`} />
                 {SSoptions()}
             </button>
@@ -153,7 +154,7 @@ export function Navbar (prop){
         minWidth:'0px',
     }    
     var header_s = {
-        backgroundColor:dynamicStyle$('#edf2f4',prop.darkMode_$, '#161b33'),
+        backgroundColor:dynamicStyle$('#2b2e4255',prop.darkMode_$, '#161b3333'),
         display: 'flex',
         flexDirection:'row',
         alignItems:'center',
@@ -162,24 +163,24 @@ export function Navbar (prop){
         width:'99.9%',
         height:'70px',
         position:'relative',
-        boxShadow:dynamicStyle$('2px -2px 10px 2px #bac0c1',prop.darkMode_$,'2px -2px 6px 2px rgba(20,20,20,0.6)'),
+        boxShadow:dynamicStyle$('1px -1px 6px 2px #bac0c133',prop.darkMode_$,'1px -1px 6px 2px rgba(0,0,0,0.3)'),
         zIndex:'4'
     }
     var btns_s = {
         position:'relative',
         height:'100%',
-        backgroundColor:dynamicStyle$('#dce1e3',prop.darkMode_$,'#474973'),
+        backgroundColor:'transparent',
         transition:'all ease 350ms',
         padding:dynamicStyle$('6px 18px 2px 18px', condition_2(width_427,width_769,prop.winWidth_$),'6px 6px 2px 8px'),
         border:'none',
         cursor:'pointer',
-        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
+        color:dynamicStyle$('#fff',prop.darkMode_$,'#eee'),
         display:dynamicStyle$('blog',condition_1(width_427,width_769,prop.winWidth_$),'none'),
     }
     var btn_2 = {
         position:'relative',
         height:'100%',
-        backgroundColor:dynamicStyle$('#eee',prop.darkMode_$,'#474973'),
+        backgroundColor:'transparent',
         transition:'all ease 350ms',
         padding:'6px 12px 2px 12px',
         border:'none',
@@ -210,24 +211,24 @@ export function Navbar (prop){
 
             <ul style={ul_1} className="options--">
                 <Link to={'/'}  className='link_'>
-                    <button style={btns_s} className={ 'btn_4' }>
+                    <button style={btns_s} className={ 'btn_4' } id={'home_'}>
                     Home
                     </button>
                 </Link>
                 
                 <Link to={'/article'} className={`link_`}>
-                    <button style={btns_s} className={'btn_4'}>
+                    <button style={btns_s} className={'btn_4'} id={'article_'}>
                         Article
                     </button>
                  </Link>
                 <Link to={'/about'}  className='link_'>
-                    <button style={btns_s} className={'btn_4'}>
+                    <button style={btns_s} className={'btn_4'} id={'about_'}>
                         About
                     </button>
                 </Link>
 
                 <Link to={'/contact'}  className='link_'>
-                <button style={btns_s} className={'btn_4'}>
+                <button style={btns_s} className={'btn_4'} id={'contact_'}>
                     Contact
                 </button>
                 </Link>
@@ -650,6 +651,7 @@ export function Home_Interface (prop){
         width:"100%",
         overflowX:'hidden'
     }
+
     return(
 
         <div style={Home_Interface}>
