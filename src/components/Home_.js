@@ -92,7 +92,7 @@ export function Navbar (prop){
         }
         return(
             <ul style={ul_} className={`${appearance_$ ? 'sho' : 'hid'}`}>
-                <a style={a_0} className='a_0' href="/home"> Home </a>
+                <a style={a_0} className='a_0' href="/"> Home </a>
                 <a style={a_0} className='a_0' href="/about">  About </a>
                 <a style={a_0} className='a_0' href="/contact">  Contact </a>
             </ul>

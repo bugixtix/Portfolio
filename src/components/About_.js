@@ -15,6 +15,7 @@ export default function About_ (prop){
     }
     var outDiv_s = {
         width:'100%',
+        height:'77%',
         display:'flex',
         flexDirection:dynamicStyle$('row',_window768$(),'column',_window427$(),'column'),
         alignItems:'center',
