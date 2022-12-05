@@ -11,6 +11,7 @@ import {useState, useEffect} from 'react';
 import Blog_Site from './blog/Blog_Site';
 import About_ from './components/About_';
 import { Contact_ } from './components/Contact_';
+import B_H from './components/Blog_Home';
 function App() {
 
   let dark_local =  JSON.parse(localStorage.getItem('dark')) || false
@@ -71,6 +72,15 @@ function App() {
     </Fragment>
     )
   }
+
+  let Blog_Home = () => {
+    return(
+      <Fragment>
+        <B_H darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} />
+        <Footer darkMode_$={dark_$}/>
+      </Fragment>
+    )
+  }
   return (
     <BrowserRouter>
     <div className="App">
@@ -80,6 +90,7 @@ function App() {
       <Route path='/article' exact element={<Blog/>}/>
       <Route path='/about' exact element={<About/>}/>
       <Route path='/contact' exact element={<Contact/>}/>
+      <Route path='/bloghome' exact element={<Blog_Home/>}/>
     </Routes>
     </div>
      </BrowserRouter> 
