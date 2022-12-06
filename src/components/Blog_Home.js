@@ -65,8 +65,8 @@ export default function B_H (prop) {
 
 
     var outDiv_2 = {
-        display:'flex',flexDirection:'row',justifyContent:'center',
-        width:'100%'
+        display:'flex',flexDirection:'row',alignItems:'flex-start',
+        width:'100%', padding:'30px 0px 0px 0px'
     }
     var in2div_ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
@@ -76,11 +76,10 @@ export default function B_H (prop) {
     var in2div__ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
         width:'45vw',
-
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'20vw'
+        width:'20vw',
 
     }
     return(
@@ -105,12 +104,15 @@ export default function B_H (prop) {
         <div style={outDiv_2}>
             <div style={in2div_}>
                 <CARD_M/>
+                <CARD_M/>
             </div>
             <div style={in2div__}>
                 <CARD_L/>
             </div>
             <div style={in2div___}>
-
+                <CARD_S/>
+                <CARD_S/>
+                <CARD_S/>
             </div>
         </div>
 
@@ -122,7 +124,7 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
-        width:'100%',padding:'8px', margin:'8px',
+        width:'100%',padding:'0px 8px ',margin:'0px 0px 16px 0px'
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -148,7 +150,7 @@ var CARD_L = (prop) => {
 
     var outDiv_s = {
         display:'flex', flexDirection:'column', 
-        width:'100%', padding:'8px',
+        width:'100%', padding:'0px 8px',
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -169,6 +171,30 @@ var CARD_L = (prop) => {
             <p style={p_s}>
                 description
             </p>
+        </div>
+    )
+}
+var CARD_S = (prop) => {
+
+    var outDiv_s = {
+        display:'flex',flexDirection:'column',
+        width:'100%', margin:'0px 0px 16px 0px',
+    }
+    var img_s = {
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'100%',height:'150px',
+    }
+    var p_1 = {
+
+    }
+    var p_2 = {
+        
+    }
+    return(
+        <div style={outDiv_s}>
+            <div style={img_s}></div>
+            <p style={p_1}> outcoming date</p>
+            <p style={p_2}> description </p>
         </div>
     )
 }
