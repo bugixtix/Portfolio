@@ -70,14 +70,17 @@ export default function B_H (prop) {
     }
     var in2div_ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
+        width:'30vw',
 
     }
     var in2div__ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
+        width:'45vw',
 
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
+        width:'20vw'
 
     }
     return(
@@ -104,7 +107,7 @@ export default function B_H (prop) {
                 <CARD_M/>
             </div>
             <div style={in2div__}>
-
+                <CARD_L/>
             </div>
             <div style={in2div___}>
 
@@ -119,11 +122,11 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
-        width:'30%',padding:'8px', margin:'8px',
+        width:'100%',padding:'8px', margin:'8px',
     }
     var imgDiv_ = {
-        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'left',
-        width:'100%', height:'auto'
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'100%', height:'300px'
     }
     var p_1 = {
 
@@ -137,6 +140,35 @@ var CARD_M = (prop) => {
             <div style={imgDiv_}></div>
             <p style={p_1}> something</p>
             <p style={p_2}> another thing</p>
+        </div>
+    )
+}
+
+var CARD_L = (prop) => {
+
+    var outDiv_s = {
+        display:'flex', flexDirection:'column', 
+        width:'100%', padding:'8px',
+    }
+    var img_s = {
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'100%', height:'600px',
+    }
+    var in1div_ = {
+
+    }
+    var p_s = {
+
+    }
+    return(
+        <div style={outDiv_s}>
+            <div style={img_s}></div>
+            <div style={in1div_}>
+                title, outcoming date
+            </div>
+            <p style={p_s}>
+                description
+            </p>
         </div>
     )
 }
