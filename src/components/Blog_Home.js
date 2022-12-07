@@ -82,6 +82,11 @@ export default function B_H (prop) {
         width:'20vw',
 
     }
+
+
+    var outDiv_3 = {
+        display:'flex',flexDirection:'row', alignItems:'space-between', justifyContent:'space-between',
+    }
     return(
 
         <div style={main_}>
@@ -114,6 +119,10 @@ export default function B_H (prop) {
                 <CARD_S/>
                 <CARD_S/>
             </div>
+        </div>
+
+        <div style={outDiv_3}>
+
         </div>
 
         </div>
@@ -195,6 +204,39 @@ var CARD_S = (prop) => {
             <div style={img_s}></div>
             <p style={p_1}> outcoming date</p>
             <p style={p_2}> description </p>
+        </div>
+    )
+}
+
+var Article_x = (prop) => {
+
+
+    var outDiv_s = {
+
+    }
+    var img_s = {
+
+    }
+    var p_1 = {
+
+    }
+    var p_2 = {
+
+    }
+    var p_3 = {
+
+    }
+    var span_s = {
+        
+    }
+
+    return(
+        <div style={outDiv_s}>
+            <div style={img_s}></div>
+            <p style={p_1}> outcoming date</p>
+            <p style={p_2}> Title of article</p>
+            <p style={p_3}> description </p>
+            <span style={span_s}>Read more</span>
         </div>
     )
 }
