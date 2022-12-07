@@ -9,7 +9,7 @@ export default function B_H (prop) {
         display:'flex',flexDirection:'column',
     }
     var outDiv_1 = {
-        // minHeight:'100vh',
+        height:'100vh',
         width:'100vw',
         overflow:'hidden',
         display:'flex',
@@ -23,7 +23,7 @@ export default function B_H (prop) {
     var in1div_ = {
         background:`${dynamicStyle$('linear-gradient(#000,#111)',!prop.darkMode_$,'linear-gradient(#e66465, #9198e5)')},url(${require('../imges/wallpaper_.png')})`,
         width:'100%',
-        height:'90vh',
+        height:'100%',
         backgroundPosition:'left',
         display:'flex',
         flexDirection:'column',
@@ -65,27 +65,28 @@ export default function B_H (prop) {
 
 
     var outDiv_2 = {
-        display:'flex',flexDirection:'row',alignItems:'flex-start',
-        width:'100%', padding:'30px 0px 0px 0px'
+        display:'flex',flexDirection:'row',justifyContent:'space-between', alignItems:'flex-start',
+         padding:'20px 0px 0px 0px', margin:'100px 7vw'
     }
     var in2div_ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'30vw',
+        width:'27vw',
 
     }
     var in2div__ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'45vw',
+        width:'40vw',
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'20vw',
+        width:'18vw',
 
     }
 
 
     var outDiv_3 = {
         display:'flex',flexDirection:'row', alignItems:'space-between', justifyContent:'space-between',
+        margin:'0px 7vw'
     }
     return(
 
@@ -113,6 +114,7 @@ export default function B_H (prop) {
             </div>
             <div style={in2div__}>
                 <CARD_L/>
+                <ITEM_XS/>
             </div>
             <div style={in2div___}>
                 <CARD_S/>
@@ -122,7 +124,9 @@ export default function B_H (prop) {
         </div>
 
         <div style={outDiv_3}>
-
+                <Article_x/>
+                <Article_x/>
+                <Article_x/>
         </div>
 
         </div>
@@ -133,17 +137,18 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
-        width:'100%',padding:'0px 8px ',margin:'0px 0px 16px 0px'
+        width:'100%',padding:'0px 24px 0px 0px ',margin:'0px 0px 36px 0px'
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%', height:'300px'
+        width:'100%', height:'200px'
     }
     var p_1 = {
-
+        padding:'4px 0px'
     }
     var p_2 = {
-
+        padding:'4px 0px'
+        
     }
 
     return(
@@ -159,27 +164,71 @@ var CARD_L = (prop) => {
 
     var outDiv_s = {
         display:'flex', flexDirection:'column', 
-        width:'100%', padding:'0px 8px',
+        width:'100%', padding:'0px 8px', margin:'0px 0px 8px 0px'
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%', height:'600px',
+        width:'100%', height:'400px',
     }
     var in1div_ = {
-
+        display:'flex',flexDirection:'column',
     }
-    var p_s = {
-
+    var p_1 = {
+        padding:' 4px 0px',
     }
+    var p_2 = {
+        padding:' 4px 0px', width:''
+    }
+    var p_3 = {
+        padding:' 4px 0px',
+    }
+    var span_s = {
+        padding:' 8px 0px',
+    }
+
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <div style={in1div_}>
-                title, outcoming date
+                <p style={p_1}> outcoming </p>
+                <p style={p_2}> Title </p>
+                <p style={p_3}> description </p>
+                <span style={span_s}>READ MORE</span>
             </div>
-            <p style={p_s}>
-                description
-            </p>
+        </div>
+    )
+}
+var ITEM_XS = (prop) => {
+
+    var outDiv_s = {
+        display:'flex',flexDirection:'row',
+        padding:'0px 8px', margin:'8px 0px',
+        width:'100%'
+    }
+
+    var img_s = {
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'30%', height:'100px',
+    }
+    var inDiv_s = {
+        display:'flex', flexDirection:'column',
+        padding:'0px 8px', width:'70%',
+    }
+    var p_1 = {
+        // width:'auto'
+    }
+    var p_2 = {
+        // width:'auto'
+        lineHeight:'0.9em', letterSpacing:'1px'
+    }
+    return(
+        <div style={outDiv_s}>
+
+            <div style={img_s}></div>
+            <div style={inDiv_s}>
+                <p style={p_1}>outcoming</p>
+                <p style={p_2}>Title, description or any text you add to add, to let audience know, what this thing is about</p>
+            </div>
         </div>
     )
 }
@@ -187,7 +236,7 @@ var CARD_S = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',
-        width:'100%', margin:'0px 0px 16px 0px',
+        width:'100%', margin:'0px 0px 16px 0px', padding:'0px 0px 0px 24px'
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -212,22 +261,25 @@ var Article_x = (prop) => {
 
 
     var outDiv_s = {
-
+        display:'flex',flexDirection:'column',alignItems:'flex-start',
+        width:'25vw', margin:'8px'
     }
     var img_s = {
-
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'100%',height:'200px',
     }
     var p_1 = {
-
+        color:'#aaa',
+        padding:'4px'
     }
     var p_2 = {
-
+        padding:'4px 4px'
     }
     var p_3 = {
-
+        padding:'4px'
     }
     var span_s = {
-        
+        padding:'4px 4px'
     }
 
     return(
