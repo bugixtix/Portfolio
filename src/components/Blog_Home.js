@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Navbar } from "./Home_";
-import { dynamicStyle$ } from "../lainy";
+import { dynamicStyle$, _window768$, _window427$ } from "../lainy";
 import './style.css'
 
-export default function B_H (prop) {
 
+export default function B_H (prop) {
+    let [winWidth_$, setWinWidth] = useState(window.innerWidth)
+
+    useEffect(()=>{
+        setWinWidth(window.innerWidth)
+    },[winWidth_$])
+    console.log(winWidth_$)
     var main_ = {
         display:'flex',flexDirection:'column',
     }
@@ -73,18 +79,17 @@ export default function B_H (prop) {
     }
     var in2div__ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'40vw',
+        width:dynamicStyle$('40vw',_window768$(winWidth_$),'60vw'),
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'18vw',
-
+        width:dynamicStyle$('18vw',_window768$(winWidth_$),'30vw'),
     }
 
 
     var outDiv_3 = {
         display:'flex',flexDirection:'row', alignItems:'space-between', justifyContent:'space-between',
-        margin:'0px 7vw'
+        margin:'4rem 7vw'
     }
     return(
 
@@ -106,18 +111,19 @@ export default function B_H (prop) {
         </div>
 
         <div style={outDiv_2}>
-            <div style={in2div_}>
+            {   !_window768$(winWidth_$) &&
+                <div style={in2div_}>
                 <CARD_M/>
                 <CARD_M/>
-            </div>
+            </div>}
             <div style={in2div__}>
-                <CARD_L/>
+                <CARD_L winWidth_$={winWidth_$}/>
                 <ITEM_XS/>
             </div>
             <div style={in2div___}>
-                <CARD_S/>
-                <CARD_S/>
-                <CARD_S/>
+                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$}/>
             </div>
         </div>
 
@@ -126,6 +132,28 @@ export default function B_H (prop) {
                 <Article_x/>
                 <Article_x/>
         </div>
+        <div style={outDiv_3}>
+                <Article_x/>
+                <Article_x/>
+                <Article_x/>
+        </div>
+        
+        <div style={outDiv_2}>
+            <div style={in2div_}>
+                <CARD_M/>
+                <CARD_M/>
+            </div>
+            <div style={in2div__}>
+                <CARD_L winWidth_$={winWidth_$}/>
+                <ITEM_XS/>
+            </div>
+            <div style={in2div___}>
+                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$}/>
+            </div>
+        </div>
+
 
         </div>
     )
@@ -135,11 +163,12 @@ var CARD_S = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',
-        width:'100%', margin:'0px 0px 16px 0px', padding:'0px 0px 0px 24px'
+        width:'100%', margin:'0rem 0px 2rem 0px', padding:dynamicStyle$('0px 0px 0px 24px', _window768$(prop.winWidth_$),'0px 0px 0px 16px')
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'100%',height:'150px',
+        borderRadius:'8px',
     }
     var p_1 = {
 
@@ -160,12 +189,14 @@ var CARD_S = (prop) => {
 var CARD_M = (prop) => {
 
     var outDiv_s = {
-        display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
-        width:'100%',padding:'0px 24px 0px 0px ',margin:'0px 0px 36px 0px'
+        display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start',
+        width:'100%',padding:'0px 24px 0px 0px ',margin:'0rem 0px 3rem 0px'
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%', height:'200px'
+        width:'100%', height:'200px',
+        borderRadius:'8px',
+
     }
     var p_1 = {
         padding:'4px 0px'
@@ -195,7 +226,7 @@ var CARD_L = (prop) => {
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'100%', height:'400px',
-        borderRadius:'8px'
+        borderRadius:'8px',
     }
     var in1div_ = {
         display:'flex',flexDirection:'column',
@@ -204,7 +235,7 @@ var CARD_L = (prop) => {
         padding:' 4px 0px',
     }
     var p_2 = {
-        padding:' 4px 0px 2em 0px', width:'60%'
+        padding:dynamicStyle$('4px 0px 2em 0px',_window768$(prop.winWidth_$),'4px 0px 1em 0px'), width:'80%'
     }
     var p_3 = {
         padding:' 4px 0px',
@@ -239,6 +270,8 @@ var ITEM_XS = (prop) => {
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'30%', height:'100px',
+        borderRadius:'8px',
+
     }
     var inDiv_s = {
         display:'flex', flexDirection:'column',
@@ -275,6 +308,8 @@ var Article_x = (prop) => {
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'100%',height:'200px',
+        borderRadius:'8px',
+
     }
     var p_1 = {
         color:'#aaa',
