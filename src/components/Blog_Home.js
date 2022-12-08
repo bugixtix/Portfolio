@@ -50,16 +50,14 @@ export default function B_H (prop) {
         background:'#000',
     }
     var p_1 = {
-        padding:'0.8rem 0.8rem 0px 0.8rem',
+        padding:'0.8rem 0.8rem',
         borderTop:'3px solid red',
         textAlign:'left',
         width:'90%'
     }
     var in1div_1 = {
-        height:'85%',
-        display:'flex',
-        flexDirection:'column',
-        alignItems:'center',justifyContent:'center',
+        height:'80%', margin:'10% 0px 0px 0px',
+        display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',
 
     }
 
@@ -100,10 +98,10 @@ export default function B_H (prop) {
 
             <div style={in1div_}>
                 <div style={in1div_1}>
-                <h2 style={h2_s} className={'_700 uppercase darkblue _42'}>ixtix</h2>
-                <p style={p_s}>description you want</p>
+                <h2 style={h2_s} className={'_700 uppercase black _70'}>ixtix</h2>
+                <p style={p_s} className={'_500  darkblue _28'}>description you want</p>
                 </div>
-                <p style={p_1}>looking for something specific</p>
+                <p style={p_1} className={'_500 uppercase red _24'}>looking for something specific</p>
             </div>
         </div>
 
@@ -154,7 +152,7 @@ var CARD_S = (prop) => {
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
-            <p style={p_2}> {txt} </p>
+            <p style={p_2} className={'black _20 _600 '}> {txt} </p>
         </div>
     )
 }
@@ -173,7 +171,7 @@ var CARD_M = (prop) => {
         padding:'4px 0px'
     }
     var p_2 = {
-        padding:'4px 0px'
+        padding:'4px 0px',
         
     }
 
@@ -183,7 +181,7 @@ var CARD_M = (prop) => {
         <div style={outDiv_s}>
             <div style={imgDiv_}></div>
             <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
-            <p style={p_2}>{txt}</p>
+            <p style={p_2} className={'black _22 _600 '}>{txt}</p>
         </div>
     )
 }
@@ -197,6 +195,7 @@ var CARD_L = (prop) => {
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'100%', height:'400px',
+        borderRadius:'8px'
     }
     var in1div_ = {
         display:'flex',flexDirection:'column',
@@ -221,8 +220,8 @@ var CARD_L = (prop) => {
             <div style={img_s}></div>
             <div style={in1div_}>
                 <p style={p_1} className={'gray _500'}> outcoming </p>
-                <p style={p_2}> Title </p>
-                <p style={p_3}> {txt} </p>
+                <p style={p_2} className={'black _38 _800'}> Title </p>
+                <p style={p_3} className={'black _22 _500 '}> {txt} </p>
                 <span style={span_s}>READ MORE</span>
             </div>
         </div>
@@ -260,7 +259,7 @@ var ITEM_XS = (prop) => {
             <div style={img_s}></div>
             <div style={inDiv_s}>
                 <p style={p_1} className={'gray _14 _500'}>outcoming</p>
-                <p style={p_2}>{txt}</p>
+                <p style={p_2} className={'black _20 _600 '}>{txt}</p>
             </div>
         </div>
     )
@@ -297,7 +296,7 @@ var Article_x = (prop) => {
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <p style={p_1} className={'gray _500'}> outcoming date</p>
-            <p style={p_2}> Title of article</p>
+            <p style={p_2} className={'black _28 _600 '}> Title of article</p>
             <p style={p_3}> {txt} </p>
             <span style={span_s}>Read more</span>
         </div>
