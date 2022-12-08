@@ -151,7 +151,7 @@ var CARD_S = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
+            <p style={p_1} className={'gray _18 _500'}> outcoming date</p>
             <p style={p_2} className={'black _20 _600 '}> {txt} </p>
         </div>
     )
@@ -180,7 +180,7 @@ var CARD_M = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={imgDiv_}></div>
-            <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
+            <p style={p_1} className={'gray _20 _500'}> outcoming date</p>
             <p style={p_2} className={'black _22 _600 '}>{txt}</p>
         </div>
     )
@@ -204,7 +204,7 @@ var CARD_L = (prop) => {
         padding:' 4px 0px',
     }
     var p_2 = {
-        padding:' 4px 0px', width:'60%'
+        padding:' 4px 0px 2em 0px', width:'60%'
     }
     var p_3 = {
         padding:' 4px 0px',
@@ -219,10 +219,10 @@ var CARD_L = (prop) => {
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <div style={in1div_}>
-                <p style={p_1} className={'gray _500'}> outcoming </p>
+                <p style={p_1} className={'gray _22 _500'}> outcoming </p>
                 <p style={p_2} className={'black _38 _800'}> Title </p>
                 <p style={p_3} className={'black _22 _500 '}> {txt} </p>
-                <span style={span_s}>READ MORE</span>
+                <span style={span_s} className={'_20 _500'}>READ MORE</span>
             </div>
         </div>
     )
@@ -258,7 +258,7 @@ var ITEM_XS = (prop) => {
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
-                <p style={p_1} className={'gray _14 _500'}>outcoming</p>
+                <p style={p_1} className={'gray _20 _500'}>outcoming</p>
                 <p style={p_2} className={'black _20 _600 '}>{txt}</p>
             </div>
         </div>
@@ -295,10 +295,10 @@ var Article_x = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1} className={'gray _500'}> outcoming date</p>
+            <p style={p_1} className={'gray _20 _500'}> outcoming date</p>
             <p style={p_2} className={'black _28 _600 '}> Title of article</p>
             <p style={p_3}> {txt} </p>
-            <span style={span_s}>Read more</span>
+            <span style={span_s} className={'_20 _500'}>Read more</span>
         </div>
     )
 }
