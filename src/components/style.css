@@ -2,6 +2,24 @@
 /*  */
 
 /*  */
+
+
+.href{
+    font-weight: 600;
+    color: #373;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* colors */
+.black {color: black;} .blue{color: blue;} .red{color: red;} .white{color: white;} .green{color: green;} .yellow{color: yellow;} .darkblue{color: darkblue;} .darkred{color:darkred;} .gray{color: gray;} .darkgreen{color: darkgreen;} .lime{color:lime;} .violet{color: violet} .pink{color: pink;} .orange{color: orange;}
+/* fontWeight */
+._300{font-weight: 300;} ._400{font-weight: 400;} ._500{font-weight: 500;} ._600{font-weight: 600;} ._700{font-weight: 700;} ._800{font-weight: 800;} ._900{font-weight: 900;}
+/* font decoration */
+.underline{text-decoration: underline;} .italic{font-style:italic;} .linethrough{text-decoration: line-through;} .uppercase{text-transform: uppercase;} .captalize{text-transform: capitalize;} .lowercase{text-transform:lowercase;}
+/* font size */
+._12{font-size: 12px;} ._14{font-size: 14px;} ._16{font-size: 16px;} ._18{font-size: 18px;} ._20{font-size: 20px;} ._22{font-size: 22px;} ._24{font-size: 24px;} ._26{font-size: 26px;} ._28{font-size: 28px;} ._30{font-size: 30px;} ._32{font-size: 32px;} ._34{font-size: 34px;} ._36{font-size: 36px;} ._38{font-size: 38px;} ._40{font-size: 40px;} ._42{font-size: 42px;} ._44{font-size:44px} ._46{font-size:46px} ._48{font-size:48px} ._50{font-size:50px} ._52{font-size:52px} ._54{font-size:54px}._56{font-size:56px}._58{font-size:58px}._60{font-size:60px}._62{font-size:62px}._64{font-size:64px}._66{font-size:66px}._68{font-size:68px}._70{font-size:70px}._72{font-size:72px}._74{font-size:74px}._76{font-size:76px}._78{font-size:78px}._80{font-size:80px}._82{font-size:82px}
+
+/*  */
 .link_, .link_:hover, .link_:focus{
     text-decoration: none;
     outline:none;

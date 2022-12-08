@@ -6,23 +6,5 @@
 
 }
 
-.underline{
-    text-decoration: underline;
-}
-.href{
-    font-weight: 600;
-    color: #373;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* colors */
-.black {color: black;} .blue{color: blue;} .red{color: red;} .white{color: white;} .green{color: green;} .yellow{color: yellow;} .darkblue{color: darkblue;} .darkred{color:darkred;} .gray{color: gray;} .darkgreen{color: darkgreen;} .lime{color:lime;} .violet{color: violet} .pink{color: pink;} .orange{color: orange;}
-/* fontWeight */
-._300{font-weight: 300;} ._400{font-weight: 400;} ._500{font-weight: 500;} ._600{font-weight: 600;} ._700{font-weight: 700;} ._800{font-weight: 800;} ._900{font-weight: 900;}
-/* font decoration */
-.underline{text-decoration: underline;} .italic{font-style:italic;} .linethrough{text-decoration: line-through;} .uppercase{text-transform: uppercase;} .captalize{text-transform: capitalize;} .lowercase{text-transform:lowercase;}
-/* font size */
-._12{font-size: 12px;} ._14{font-size: 14px;} ._16{font-size: 16px;} ._18{font-size: 18px;} ._20{font-size: 20px;} ._22{font-size: 22px;} ._24{font-size: 24px;} ._26{font-size: 26px;} ._28{font-size: 28px;} ._30{font-size: 30px;} ._32{font-size: 32px;} ._34{font-size: 34px;} ._36{font-size: 36px;} ._38{font-size: 38px;} ._40{font-size: 40px;} ._42{font-size: 42px;}
-
 .co{color:#010c1d;color:#161b33; color:#f1dac4; color:#474973; color:#ff3; color:#a69cac; }
 .cc{color: #2b2e42, #8d99ae, #edf2f4, #ef233c, #d90429 ;}

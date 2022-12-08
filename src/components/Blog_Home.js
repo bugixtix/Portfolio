@@ -133,6 +133,32 @@ export default function B_H (prop) {
     )
 }
 
+var CARD_S = (prop) => {
+
+    var outDiv_s = {
+        display:'flex',flexDirection:'column',
+        width:'100%', margin:'0px 0px 16px 0px', padding:'0px 0px 0px 24px'
+    }
+    var img_s = {
+        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
+        width:'100%',height:'150px',
+    }
+    var p_1 = {
+
+    }
+    var p_2 = {
+        
+    }
+    var txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr?'
+    return(
+        <div style={outDiv_s}>
+            <div style={img_s}></div>
+            <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
+            <p style={p_2}> {txt} </p>
+        </div>
+    )
+}
+
 var CARD_M = (prop) => {
 
     var outDiv_s = {
@@ -151,11 +177,13 @@ var CARD_M = (prop) => {
         
     }
 
+    let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod'
+
     return(
         <div style={outDiv_s}>
             <div style={imgDiv_}></div>
-            <p style={p_1}> something</p>
-            <p style={p_2}> another thing</p>
+            <p style={p_1} className={'gray _14 _500'}> outcoming date</p>
+            <p style={p_2}>{txt}</p>
         </div>
     )
 }
@@ -177,7 +205,7 @@ var CARD_L = (prop) => {
         padding:' 4px 0px',
     }
     var p_2 = {
-        padding:' 4px 0px', width:''
+        padding:' 4px 0px', width:'60%'
     }
     var p_3 = {
         padding:' 4px 0px',
@@ -185,19 +213,22 @@ var CARD_L = (prop) => {
     var span_s = {
         padding:' 8px 0px',
     }
+    
+    let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
 
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <div style={in1div_}>
-                <p style={p_1}> outcoming </p>
+                <p style={p_1} className={'gray _500'}> outcoming </p>
                 <p style={p_2}> Title </p>
-                <p style={p_3}> description </p>
+                <p style={p_3}> {txt} </p>
                 <span style={span_s}>READ MORE</span>
             </div>
         </div>
     )
 }
+
 var ITEM_XS = (prop) => {
 
     var outDiv_s = {
@@ -221,38 +252,16 @@ var ITEM_XS = (prop) => {
         // width:'auto'
         lineHeight:'0.9em', letterSpacing:'1px'
     }
+
+    let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
     return(
         <div style={outDiv_s}>
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
-                <p style={p_1}>outcoming</p>
-                <p style={p_2}>Title, description or any text you add to add, to let audience know, what this thing is about</p>
+                <p style={p_1} className={'gray _14 _500'}>outcoming</p>
+                <p style={p_2}>{txt}</p>
             </div>
-        </div>
-    )
-}
-var CARD_S = (prop) => {
-
-    var outDiv_s = {
-        display:'flex',flexDirection:'column',
-        width:'100%', margin:'0px 0px 16px 0px', padding:'0px 0px 0px 24px'
-    }
-    var img_s = {
-        background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%',height:'150px',
-    }
-    var p_1 = {
-
-    }
-    var p_2 = {
-        
-    }
-    return(
-        <div style={outDiv_s}>
-            <div style={img_s}></div>
-            <p style={p_1}> outcoming date</p>
-            <p style={p_2}> description </p>
         </div>
     )
 }
@@ -281,13 +290,15 @@ var Article_x = (prop) => {
     var span_s = {
         padding:'4px 4px'
     }
+    
+    let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
 
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1}> outcoming date</p>
+            <p style={p_1} className={'gray _500'}> outcoming date</p>
             <p style={p_2}> Title of article</p>
-            <p style={p_3}> description </p>
+            <p style={p_3}> {txt} </p>
             <span style={span_s}>Read more</span>
         </div>
     )
