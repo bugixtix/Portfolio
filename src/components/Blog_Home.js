@@ -72,6 +72,7 @@ export default function B_H (prop) {
         display:'flex',flexDirection:'row',justifyContent:'space-between', alignItems:'flex-start',
          padding:'20px 0px 0px 0px', margin:'100px 7vw'
     }
+    // TO DO: MAKE THE FLEX OF OUTDIV-2 RESPONSIVE WITH FLEXWRAP  
     var in2div_ = {
         display:'flex',flexDirection:'column',justifyContent:'center',
         width:'27vw',
