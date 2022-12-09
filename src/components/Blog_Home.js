@@ -69,13 +69,13 @@ export default function B_H (prop) {
 
 
     var outDiv_2 = {
-        display:'flex',flexDirection:'row',justifyContent:'space-between', alignItems:'flex-start',
-         padding:'20px 0px 0px 0px', margin:'100px 7vw'
+        display:'flex',flexDirection:dynamicStyle$('row',_window768$(winWidth_$),'unset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'),justifyContent:dynamicStyle$('space-between', _window768$(winWidth_$), 'center'), alignItems:'flex-start',
+         padding:'20px 0px 0px 0px', margin:dynamicStyle$('100px 7vw',_window768$(winWidth_$),'8px 16px')
     }
     // TO DO: MAKE THE FLEX OF OUTDIV-2 RESPONSIVE WITH FLEXWRAP  
     var in2div_ = {
-        display:'flex',flexDirection:'column',justifyContent:'center',
-        width:'27vw',
+        display:'flex',flexDirection:dynamicStyle$('column',_window768$(winWidth_$), 'unset'), flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'),justifyContent:dynamicStyle$('center', _window768$(winWidth_$), 'space-evenly'),
+        width:dynamicStyle$('27vw',_window768$(winWidth_$),'90vw'),
 
     }
     var in2div__ = {
@@ -84,13 +84,13 @@ export default function B_H (prop) {
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:dynamicStyle$('18vw',_window768$(winWidth_$),'30vw'),
+        width:dynamicStyle$('18vw',_window768$(winWidth_$),'25vw'),
     }
 
 
     var outDiv_3 = {
-        display:'flex',flexDirection:'row', alignItems:'space-between', justifyContent:'space-between',
-        margin:'4rem 7vw'
+        display:'flex',flexDirection:dynamicStyle$('row', _window768$(prop.winWidth_$),'unset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'), alignItems:'space-between', justifyContent:dynamicStyle$('space-between',_window768$(winWidth_$),'center'),
+        margin:'3rem 5vw 0px 5vw',
     }
     return(
 
@@ -112,8 +112,8 @@ export default function B_H (prop) {
         </div>
 
         <div style={outDiv_2}>
-            {   !_window768$(winWidth_$) &&
-                <div style={in2div_}>
+            {!_window768$(winWidth_$) &&
+            <div style={in2div_}>
                 <CARD_M/>
                 <CARD_M/>
             </div>}
@@ -126,17 +126,22 @@ export default function B_H (prop) {
                 <CARD_S winWidth_$={winWidth_$}/>
                 <CARD_S winWidth_$={winWidth_$}/>
             </div>
+            {_window768$(winWidth_$) && 
+            <div style={in2div_}>
+                <CARD_M winWidth_$={winWidth_$}/>
+                <CARD_M winWidth_$={winWidth_$}/>
+            </div>}
         </div>
 
         <div style={outDiv_3}>
-                <Article_x/>
-                <Article_x/>
-                <Article_x/>
+                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$}/>
         </div>
         <div style={outDiv_3}>
-                <Article_x/>
-                <Article_x/>
-                <Article_x/>
+                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$}/>
         </div>
         
         <div style={outDiv_2}>
@@ -191,7 +196,7 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start',
-        width:'100%',padding:'0px 24px 0px 0px ',margin:'0rem 0px 3rem 0px'
+        width:dynamicStyle$('100%',_window768$(prop.winWidth_$),'40%'),padding:'0px 24px 0px 0px ',margin:dynamicStyle$('0rem 0px 3rem 0px',_window768$(prop.winWidth_$),'1rem 0px 1rem 0px')
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -233,16 +238,16 @@ var CARD_L = (prop) => {
         display:'flex',flexDirection:'column',
     }
     var p_1 = {
-        padding:' 4px 0px',
+        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px'),
     }
     var p_2 = {
-        padding:dynamicStyle$('4px 0px 2em 0px',_window768$(prop.winWidth_$),'4px 0px 1em 0px'), width:'80%'
+        padding:dynamicStyle$('4px 0px 2em 0px',_window768$(prop.winWidth_$),'4px 0px 8px 0px'), width:'80%'
     }
     var p_3 = {
-        padding:' 4px 0px',
+        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px'),
     }
     var span_s = {
-        padding:' 8px 0px',
+        padding:dynamicStyle$(' 8px 0px',_window768$(prop.winWidth_$), '2px 0px'),
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
@@ -283,7 +288,7 @@ var ITEM_XS = (prop) => {
     }
     var p_2 = {
         // width:'auto'
-        lineHeight:'0.9em', letterSpacing:'1px'
+        lineHeight:'0.9em', letterSpacing:'1px',
     }
 
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
@@ -304,26 +309,26 @@ var Article_x = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',
-        width:'25vw', margin:'8px'
+        width:dynamicStyle$('25vw',_window768$(prop.winWidth_$),'45%'), margin:'8px'
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%',height:'200px',
+        width:'100%',height:    '200px',
         borderRadius:'8px',
 
     }
     var p_1 = {
         color:'#aaa',
-        padding:'4px'
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
     }
     var p_2 = {
-        padding:'4px 4px'
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
     }
     var p_3 = {
-        padding:'4px'
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
     }
     var span_s = {
-        padding:'4px 4px'
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
