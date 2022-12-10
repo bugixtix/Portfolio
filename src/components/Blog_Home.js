@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Navbar } from "./Home_";
-import { dynamicStyle$, _window768$, _window427$ } from "../lainy";
+import { dynamicStyle$, _window768$, _window427$, dayOfYear$ } from "../lainy";
 import './style.css'
 
 
@@ -10,7 +10,7 @@ export default function B_H (prop) {
     useEffect(()=>{
         setWinWidth(window.innerWidth)
     },[winWidth_$])
-    console.log(winWidth_$)
+    // console.log(winWidth_$)
     var main_ = {
         display:'flex',flexDirection:'column',
     }
@@ -69,28 +69,28 @@ export default function B_H (prop) {
 
 
     var outDiv_2 = {
-        display:'flex',flexDirection:dynamicStyle$('row',_window768$(winWidth_$),'unset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'),justifyContent:dynamicStyle$('space-between', _window768$(winWidth_$), 'center'), alignItems:'flex-start',
-         padding:'20px 0px 0px 0px', margin:dynamicStyle$('100px 7vw',_window768$(winWidth_$),'8px 16px')
+        display:'flex',flexDirection:dynamicStyle$('row',_window768$(winWidth_$),'unset', _window427$(winWidth_$),'unset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap',_window427$(winWidth_$),'wrap'),justifyContent:dynamicStyle$('space-between', _window768$(winWidth_$), 'center',_window427$(winWidth_$),'center'), alignItems:'flex-start',
+         padding:'20px 0px 0px 0px', margin:dynamicStyle$('2rem 7vw 0px 7vw',_window768$(winWidth_$),'8px 16px', _window427$(winWidth_$),'8px 16px')
     }
     // TO DO: MAKE THE FLEX OF OUTDIV-2 RESPONSIVE WITH FLEXWRAP  
     var in2div_ = {
         display:'flex',flexDirection:dynamicStyle$('column',_window768$(winWidth_$), 'unset'), flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'),justifyContent:dynamicStyle$('center', _window768$(winWidth_$), 'space-evenly'),
-        width:dynamicStyle$('27vw',_window768$(winWidth_$),'90vw'),
+        width:dynamicStyle$('27vw',_window768$(winWidth_$),'90vw', _window427$(winWidth_$),'90vw'),
 
     }
     var in2div__ = {
-        display:'flex',flexDirection:'column',justifyContent:'center',
-        width:dynamicStyle$('40vw',_window768$(winWidth_$),'60vw'),
+        display:'flex',flexDirection:dynamicStyle$('column',_window427$(winWidth_$), 'unset'),flexWrap:dynamicStyle$('unset',_window427$(winWidth_$),'wrap'),justifyContent:'center',
+        width:dynamicStyle$('40vw',_window768$(winWidth_$),'60vw', _window427$(winWidth_$),'90vw'),
     }
     var in2div___ ={
         display:'flex',flexDirection:'column',justifyContent:'center',
-        width:dynamicStyle$('18vw',_window768$(winWidth_$),'25vw'),
+        width:dynamicStyle$('18vw',_window768$(winWidth_$),'25vw', _window427$(winWidth_$),'90vw'),
     }
 
 
     var outDiv_3 = {
-        display:'flex',flexDirection:dynamicStyle$('row', _window768$(prop.winWidth_$),'unset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap'), alignItems:'space-between', justifyContent:dynamicStyle$('space-between',_window768$(winWidth_$),'center'),
-        margin:'3rem 5vw 0px 5vw',
+        display:'flex',flexDirection:dynamicStyle$('row', _window768$(winWidth_$),'unset',_window427$(winWidth_$),'uset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap',_window427$(winWidth_$),'wrap'), alignItems:'space-between', justifyContent:dynamicStyle$('space-between',_window768$(winWidth_$),'center',_window427$(winWidth_$),'center'),
+        margin:dynamicStyle$('3rem 5vw 0px 5vw',_window768$(winWidth_$),'1rem', _window427$(winWidth_$),'1rem'),
     }
     return(
 
@@ -136,12 +136,12 @@ export default function B_H (prop) {
         <div style={outDiv_3}>
                 <Article_x winWidth_$={winWidth_$}/>
                 <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$} lastChild_={true}/>
         </div>
         <div style={outDiv_3}>
                 <Article_x winWidth_$={winWidth_$}/>
                 <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$}/>
+                <Article_x winWidth_$={winWidth_$} lastChild_={true}/>
         </div>
         
         <div style={outDiv_2}>
@@ -168,26 +168,33 @@ export default function B_H (prop) {
 var CARD_S = (prop) => {
 
     var outDiv_s = {
-        display:'flex',flexDirection:'column',
-        width:'100%', margin:'0rem 0px 2rem 0px', padding:dynamicStyle$('0px 0px 0px 24px', _window768$(prop.winWidth_$),'0px 0px 0px 16px')
+        display:'flex',flexDirection:dynamicStyle$('column',_window427$(prop.winWidth$),'row'),
+        width:'100%', margin:dynamicStyle$('0rem 0px 2rem 0px',_window427$(prop.winWidth_$),'0.7rem 0px 0.3rem 0px'), padding:dynamicStyle$('0px 0px 0px 24px', _window768$(prop.winWidth_$),'0px 0px 0px 16px',_window427$(prop.winWidth_$),'0px 8px 0px 8px'),
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%',height:'150px',
+        width:'100%',height:dynamicStyle$('150px',_window427$(prop.winWidth_$),'100px'),
         borderRadius:'8px',
     }
     var p_1 = {
-
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px')
     }
     var p_2 = {
-        
+        overflowWrap:'break-word', wordWrap:'break-word', 
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px')
+    }
+    var inDiv_ = {
+        display:'flex',flexDirection:'column',
+        padding:'0px 8px'
     }
     var txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr?'
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1} className={'gray _18 _500'}> outcoming date</p>
-            <p style={p_2} className={'black _20 _600 '}> {txt} </p>
+            <div style={inDiv_}>
+            <p style={p_1} className={'gray _500'}> outcoming date</p>
+            <p style={p_2} className={'black _600 '}> {txt} </p>
+            </div>
         </div>
     )
 }
@@ -196,7 +203,7 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start',
-        width:dynamicStyle$('100%',_window768$(prop.winWidth_$),'40%'),padding:'0px 24px 0px 0px ',margin:dynamicStyle$('0rem 0px 3rem 0px',_window768$(prop.winWidth_$),'1rem 0px 1rem 0px')
+        width:dynamicStyle$('100%',_window768$(prop.winWidth_$),'40%'),padding:dynamicStyle$('0px 24px 0px 0px ',_window768$(prop.winWidth_$),'0px 8px',_window427$(prop.winWidth_$),'0px 8px'),margin:dynamicStyle$('0rem 0px 3rem 0px',_window768$(prop.winWidth_$),'1rem 0px 1rem 0px',_window427$(prop.winWidth_$),'1rem 0px 1rem 0px')
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -205,10 +212,12 @@ var CARD_M = (prop) => {
 
     }
     var p_1 = {
-        padding:'4px 0px'
+        padding:'4px 0px',
+        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'17px', _window427$(prop.winWidth_$),'15px')
     }
     var p_2 = {
         padding:'4px 0px',
+        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'18px', _window427$(prop.winWidth_$),'16px')
         
     }
 
@@ -238,16 +247,16 @@ var CARD_L = (prop) => {
         display:'flex',flexDirection:'column',
     }
     var p_1 = {
-        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px'),
+        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
     }
     var p_2 = {
-        padding:dynamicStyle$('4px 0px 2em 0px',_window768$(prop.winWidth_$),'4px 0px 8px 0px'), width:'80%'
+        padding:dynamicStyle$('4px 0px 12px 0px',_window768$(prop.winWidth_$),'4px 0px 8px 0px',_window427$(prop.winWidth_$),'4px 0px 8px 0px'), width:'80%',
     }
     var p_3 = {
-        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px'),
+        padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
     }
     var span_s = {
-        padding:dynamicStyle$(' 8px 0px',_window768$(prop.winWidth_$), '2px 0px'),
+        padding:dynamicStyle$(' 8px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
@@ -284,11 +293,11 @@ var ITEM_XS = (prop) => {
         padding:'0px 8px', width:'70%',
     }
     var p_1 = {
-        // width:'auto'
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px')
     }
     var p_2 = {
-        // width:'auto'
         lineHeight:'0.9em', letterSpacing:'1px',
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px')
     }
 
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
@@ -297,8 +306,8 @@ var ITEM_XS = (prop) => {
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
-                <p style={p_1} className={'gray _20 _500'}>outcoming</p>
-                <p style={p_2} className={'black _20 _600 '}>{txt}</p>
+                <p style={p_1} className={'gray _500'}>outcoming</p>
+                <p style={p_2} className={'black _600 '}>{txt}</p>
             </div>
         </div>
     )
@@ -309,26 +318,28 @@ var Article_x = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',
-        width:dynamicStyle$('25vw',_window768$(prop.winWidth_$),'45%'), margin:'8px'
+        width:dynamicStyle$('25vw',_window768$(prop.winWidth_$),dynamicStyle$('45%',prop.lastChild_,'90%'),_window427$(prop.winWidth_$),dynamicStyle$('44%',prop.lastChild_,'90%')), margin:'8px'
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
-        width:'100%',height:    '200px',
+        width:'100%',height:dynamicStyle$('200px',_window768$(prop.winWidth_$),'160px',_window427$(prop.winWidth_$),'140px'),
         borderRadius:'8px',
 
     }
     var p_1 = {
         color:'#aaa',
-        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
+        fontSize:dynamicStyle$('20px', _window768$(prop.winWidth$), '18px', _window427$(prop.winWidth_$),'16px')
     }
     var p_2 = {
-        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
+        fontSize:dynamicStyle$('28px', _window768$(prop.winWidth$), '22px', _window427$(prop.winWidth_$),'20px')
     }
     var p_3 = {
-        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
     }
     var span_s = {
-        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px')
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px')
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
@@ -336,8 +347,8 @@ var Article_x = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1} className={'gray _20 _500'}> outcoming date</p>
-            <p style={p_2} className={'black _28 _600 '}> Title of article</p>
+            <p style={p_1} className={'gray _500'}> outcoming date</p>
+            <p style={p_2} className={'black _600 '}> Title of article</p>
             <p style={p_3}> {txt} </p>
             <span style={span_s} className={'_20 _500'}>Read more</span>
         </div>
