@@ -3,7 +3,41 @@
 
 /*  */
 
+[class ^="cursor"]{
+    position: absolute;
+    top:0;left: 0;
+    transform:translate(-50%, -50%);
+    /* border-radius: 50%; */
+    z-index: 99;
+    pointer-events: none;
+}
+.BLOGHOME{
 
+}
+.txt_0100:hover ~ .cursor-outer{
+    width: 30px; height: 20px;
+    background-color: #ffffff;
+    mix-blend-mode:difference;
+}
+.txt_0100:hover ~ .cursor-inner{
+    opacity: 0;
+}
+body{
+    overflow-x: hidden;
+    cursor: none;
+    background-color: white !important;
+}
+.cursor-outer{
+    width: 25px; height: 25px; 
+    /* border: 1px solid #000; */
+    transition: all ease 0.05s;
+}
+.cursor-inner{
+    width: 7px;height: 7px;
+    background: #000;
+    transition: all ease 0.05s;
+
+}
 .href{
     font-weight: 600;
     color: #373;
@@ -32,8 +66,10 @@
     margin:0;
     padding: 0;
     box-sizing:border-box;
+    font-family: Open Sans, sans-serif;
 }
-
+body{
+}
 /* MY NEW SPACE */
 .btn_4:hover,.mode_:hover{
     background-color: rgba(150,150,250,0.5) !important;

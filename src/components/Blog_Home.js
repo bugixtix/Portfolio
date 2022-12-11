@@ -95,7 +95,7 @@ export default function B_H (prop) {
     }
     return(
 
-        <div style={main_}>
+        <div style={main_} className={'BLOGHOME txt_0100'}>
 
         
         <div style={outDiv_1}>
@@ -115,8 +115,8 @@ export default function B_H (prop) {
         <div style={outDiv_2}>
             {!_window768$(winWidth_$) &&
             <div style={in2div_}>
-                <CARD_M darkMode_$={prop.darkMode_$}/>
-                <CARD_M darkMode_$={prop.darkMode_$}/>
+                <CARD_M darkMode_$={prop.darkMode_$} title={'xy'}/>
+                <CARD_M darkMode_$={prop.darkMode_$} title={'yz'}/>
             </div>}
             <div style={in2div__}>
                 <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
@@ -171,6 +171,7 @@ var CARD_S = (prop) => {
     var outDiv_s = {
         display:'flex',flexDirection:dynamicStyle$('column',_window427$(prop.winWidth$),'row'),
         width:'100%', margin:dynamicStyle$('0rem 0px 2rem 0px',_window427$(prop.winWidth_$),'0.7rem 0px 0.3rem 0px'), padding:dynamicStyle$('0px 0px 0px 24px', _window768$(prop.winWidth_$),'0px 0px 0px 16px',_window427$(prop.winWidth_$),'0px 8px 0px 8px'),
+        cursor:'pointer',
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -224,8 +225,11 @@ var CARD_M = (prop) => {
 
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod'
 
+    var run = () => {
+        console.log(prop.title)
+    }
     return(
-        <div style={outDiv_s}>
+        <div style={outDiv_s} onClick={run}>
             <div style={imgDiv_}></div>
             <p style={p_1} className={'_20 _500'}> outcoming date</p>
             <p style={p_2} className={'_22 _600 '}>{txt}</p>

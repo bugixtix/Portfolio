@@ -74,10 +74,23 @@ function App() {
   }
 
   let Blog_Home = () => {
+        let x = 1 ;
+        useEffect(()=>{
+          var cursor = document.querySelector('.cursor-inner');
+          var cursor_ = document.querySelector('.cursor-outer');
+          document.addEventListener('mousemove',e=>{
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+            cursor_.style.top = e.pageY + 'px';
+            cursor_.style.left = e.pageX + 'px';
+          })
+        },[x])
     return(
       <Fragment>
         <B_H darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} />
         <Footer darkMode_$={dark_$}/>
+        <div className='cursor-outer'></div>
+        <div className='cursor-inner'></div>
       </Fragment>
     )
   }
