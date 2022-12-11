@@ -10,7 +10,6 @@ export default function B_H (prop) {
     useEffect(()=>{
         setWinWidth(window.innerWidth)
     },[winWidth_$])
-    // console.log(winWidth_$)
     var main_ = {
         display:'flex',flexDirection:'column',
         background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
@@ -93,9 +92,21 @@ export default function B_H (prop) {
         display:'flex',flexDirection:dynamicStyle$('row', _window768$(winWidth_$),'unset',_window427$(winWidth_$),'uset'),flexWrap:dynamicStyle$('unset',_window768$(winWidth_$),'wrap',_window427$(winWidth_$),'wrap'), alignItems:'space-between', justifyContent:dynamicStyle$('space-between',_window768$(winWidth_$),'center',_window427$(winWidth_$),'center'),
         margin:dynamicStyle$('3rem 5vw 0px 5vw',_window768$(winWidth_$),'1rem', _window427$(winWidth_$),'1rem'),
     }
+
+    let x = 1 ;
+        useEffect(()=>{
+          var cursor = document.querySelector('.cursor-inner');
+          var cursor_ = document.querySelector('.cursor-outer');
+          document.addEventListener('mousemove',e=>{
+            cursor.style.top = e.pageY-4 + 'px';
+            cursor.style.left = e.pageX-2 + 'px';
+            cursor_.style.top = e.pageY + 'px';
+            cursor_.style.left = e.pageX + 'px';
+          })
+        },[x])
     return(
 
-        <div style={main_} className={'BLOGHOME txt_0100'}>
+        <div style={main_} className={'BLOGHOME'}>
 
         
         <div style={outDiv_1}>
@@ -103,7 +114,7 @@ export default function B_H (prop) {
             <Navbar darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$}/>
             </div>
 
-            <div style={in1div_}>
+            <div style={in1div_} className='txt_'>
                 <div style={in1div_1}>
                 <h2 style={h2_s} className={'_700 uppercase _70'}>ixtix</h2>
                 <p style={p_s} className={'_500  _28'}>description you want</p>
@@ -132,6 +143,10 @@ export default function B_H (prop) {
                 <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
                 <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>}
+
+            
+                <div className='cursor-outer'></div>
+                <div className='cursor-inner'></div>
         </div>
 
         <div style={outDiv_3}>

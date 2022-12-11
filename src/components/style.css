@@ -7,36 +7,21 @@
     position: absolute;
     top:0;left: 0;
     transform:translate(-50%, -50%);
-    /* border-radius: 50%; */
     z-index: 99;
     pointer-events: none;
 }
-.BLOGHOME{
-
-}
-.txt_0100:hover ~ .cursor-outer{
-    width: 30px; height: 20px;
-    background-color: #ffffff;
-    mix-blend-mode:difference;
-}
-.txt_0100:hover ~ .cursor-inner{
-    opacity: 0;
+.txt_:hover{
+    cursor: none;
 }
 body{
     overflow-x: hidden;
-    cursor: none;
-    background-color: white !important;
-}
-.cursor-outer{
-    width: 25px; height: 25px; 
-    /* border: 1px solid #000; */
-    transition: all ease 0.05s;
 }
 .cursor-inner{
-    width: 7px;height: 7px;
-    background: #000;
-    transition: all ease 0.05s;
-
+    /* border: 2px solid #010c1d; */
+    width: 12px;height: 12px;
+    border-radius: 50%;
+    background: #ef233c;
+    /* mix-blend-mode: difference; */
 }
 .href{
     font-weight: 600;
