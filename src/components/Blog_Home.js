@@ -13,6 +13,7 @@ export default function B_H (prop) {
     // console.log(winWidth_$)
     var main_ = {
         display:'flex',flexDirection:'column',
+        background:dynamicStyle$('transparent',prop.darkMode_$,'#010c1d')
     }
     var outDiv_1 = {
         height:'100vh',
@@ -27,25 +28,25 @@ export default function B_H (prop) {
         zIndex:'999'
     }
     var in1div_ = {
-        background:`${dynamicStyle$('linear-gradient(#000,#111)',!prop.darkMode_$,'linear-gradient(#e66465, #9198e5)')},url(${require('../imges/wallpaper_.png')})`,
+        background:`${dynamicStyle$('linear-gradient(#1a1d31,#2b2e42)',!prop.darkMode_$,'linear-gradient(#000, #111)')},url(${require('../imges/wallpaper_.png')})`,
         width:'100%',
         height:'100%',
         backgroundPosition:'left',
         display:'flex',
         flexDirection:'column',
-        backgroundBlendMode:'saturation',
+        backgroundBlendMode:dynamicStyle$('color-dodge',prop.darkMode_$,'luminosity'),
         justifyContent:'center',
         alignItems:'center',
         position:'relative',
         zIndex:'1',
     }
     var h2_s = {
-        textAlign:'center',
+        textAlign:'center', color:dynamicStyle$('010c1d',prop.darkMode_$,'#f1dac4'),
         padding:'0.8rem 0px ',
         // height:'50%',
     }
     var p_s = {
-        textAlign:'center',
+        textAlign:'center', color:dynamicStyle$('#edf2f4',prop.darkMode_$,'#ffff33cc')
         // height:'30%',
     }
     var line_ = {
@@ -56,10 +57,10 @@ export default function B_H (prop) {
         background:'#000',
     }
     var p_1 = {
-        padding:'0.8rem 0.8rem',
+        width:'90%',padding:'0.8rem 0.8rem',
         borderTop:'3px solid red',
-        textAlign:'left',
-        width:'90%'
+        textAlign:'left',color:dynamicStyle$('#161b33',prop.darkMode_$,'#ffff33bb')
+        
     }
     var in1div_1 = {
         height:'80%', margin:'10% 0px 0px 0px',
@@ -104,59 +105,59 @@ export default function B_H (prop) {
 
             <div style={in1div_}>
                 <div style={in1div_1}>
-                <h2 style={h2_s} className={'_700 uppercase black _70'}>ixtix</h2>
-                <p style={p_s} className={'_500  darkblue _28'}>description you want</p>
+                <h2 style={h2_s} className={'_700 uppercase _70'}>ixtix</h2>
+                <p style={p_s} className={'_500  _28'}>description you want</p>
                 </div>
-                <p style={p_1} className={'_500 uppercase red _24'}>looking for something specific</p>
+                <p style={p_1} className={'_500 uppercase _24'}>looking for something specific</p>
             </div>
         </div>
 
         <div style={outDiv_2}>
             {!_window768$(winWidth_$) &&
             <div style={in2div_}>
-                <CARD_M/>
-                <CARD_M/>
+                <CARD_M darkMode_$={prop.darkMode_$}/>
+                <CARD_M darkMode_$={prop.darkMode_$}/>
             </div>}
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$}/>
-                <ITEM_XS/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
-                <CARD_S winWidth_$={winWidth_$}/>
-                <CARD_S winWidth_$={winWidth_$}/>
-                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             {_window768$(winWidth_$) && 
             <div style={in2div_}>
-                <CARD_M winWidth_$={winWidth_$}/>
-                <CARD_M winWidth_$={winWidth_$}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>}
         </div>
 
         <div style={outDiv_3}>
-                <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$} lastChild_={true}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} lastChild_={true}/>
         </div>
         <div style={outDiv_3}>
-                <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$}/>
-                <Article_x winWidth_$={winWidth_$} lastChild_={true}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} lastChild_={true}/>
         </div>
         
         <div style={outDiv_2}>
             <div style={in2div_}>
-                <CARD_M/>
-                <CARD_M/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$}/>
-                <ITEM_XS/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
-                <CARD_S winWidth_$={winWidth_$}/>
-                <CARD_S winWidth_$={winWidth_$}/>
-                <CARD_S winWidth_$={winWidth_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
         </div>
 
@@ -177,11 +178,11 @@ var CARD_S = (prop) => {
         borderRadius:'8px',
     }
     var p_1 = {
-        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px')
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px'), color:dynamicStyle$('#a69cac',prop.darkMode_$,'#8d99ae'),
     }
     var p_2 = {
         overflowWrap:'break-word', wordWrap:'break-word', 
-        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px')
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$), '16px'), color:dynamicStyle$('#000', prop.darkMode_$,'#ef233c'),
     }
     var inDiv_ = {
         display:'flex',flexDirection:'column',
@@ -192,8 +193,8 @@ var CARD_S = (prop) => {
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <div style={inDiv_}>
-            <p style={p_1} className={'gray _500'}> outcoming date</p>
-            <p style={p_2} className={'black _600 '}> {txt} </p>
+            <p style={p_1} className={'_500'}> outcoming date</p>
+            <p style={p_2} className={'_600 '}> {txt} </p>
             </div>
         </div>
     )
@@ -213,11 +214,11 @@ var CARD_M = (prop) => {
     }
     var p_1 = {
         padding:'4px 0px',
-        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'17px', _window427$(prop.winWidth_$),'15px')
+        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'17px', _window427$(prop.winWidth_$),'15px'),color:dynamicStyle$('#8d99ae',prop.darkMode_$,'#8d99ae'),
     }
     var p_2 = {
         padding:'4px 0px',
-        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'18px', _window427$(prop.winWidth_$),'16px')
+        fontSize:dynamicStyle$('20',_window768$(prop.winWidth_$),'18px', _window427$(prop.winWidth_$),'16px'),color:dynamicStyle$('#010c1d',prop.darkMode_$,'#ff3'),
         
     }
 
@@ -226,8 +227,8 @@ var CARD_M = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={imgDiv_}></div>
-            <p style={p_1} className={'gray _20 _500'}> outcoming date</p>
-            <p style={p_2} className={'black _22 _600 '}>{txt}</p>
+            <p style={p_1} className={'_20 _500'}> outcoming date</p>
+            <p style={p_2} className={'_22 _600 '}>{txt}</p>
         </div>
     )
 }
@@ -248,15 +249,19 @@ var CARD_L = (prop) => {
     }
     var p_1 = {
         padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
+        color:dynamicStyle$('#8d99ae',prop.darkMode_$, '#8d99ae'),
     }
     var p_2 = {
         padding:dynamicStyle$('4px 0px 12px 0px',_window768$(prop.winWidth_$),'4px 0px 8px 0px',_window427$(prop.winWidth_$),'4px 0px 8px 0px'), width:'80%',
+        color:dynamicStyle$('#010c1d',prop.darkMode_$,'#f1dac4'),
     }
     var p_3 = {
         padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
+        color:dynamicStyle$('#161b33',prop.darkMode_$,'#fd7f20')
     }
     var span_s = {
         padding:dynamicStyle$(' 8px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
+        color:dynamicStyle$('#2b2e42',prop.darkMode_$,'#fdb750')
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
@@ -265,9 +270,9 @@ var CARD_L = (prop) => {
         <div style={outDiv_s}>
             <div style={img_s}></div>
             <div style={in1div_}>
-                <p style={p_1} className={'gray _22 _500'}> outcoming </p>
-                <p style={p_2} className={'black _38 _800'}> Title </p>
-                <p style={p_3} className={'black _22 _500 '}> {txt} </p>
+                <p style={p_1} className={'_22 _500'}> outcoming </p>
+                <p style={p_2} className={' _38 _800'}> Title </p>
+                <p style={p_3} className={'_22 _500 '}> {txt} </p>
                 <span style={span_s} className={'_20 _500'}>READ MORE</span>
             </div>
         </div>
@@ -293,10 +298,10 @@ var ITEM_XS = (prop) => {
         padding:'0px 8px', width:'70%',
     }
     var p_1 = {
-        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px')
+        fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px'), color:dynamicStyle$('#8d99ae',prop.darkMode_$,'#8d99ae')
     }
     var p_2 = {
-        lineHeight:'0.9em', letterSpacing:'1px',
+        lineHeight:'0.9em', letterSpacing:'1px',color:dynamicStyle$('#161b33',prop.darkMode_$,'#5cd85e'),
         fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px')
     }
 
@@ -327,19 +332,21 @@ var Article_x = (prop) => {
 
     }
     var p_1 = {
-        color:'#aaa',
+        color:dynamicStyle$('#8d99ae',prop.darkMode_$,'#8d99ae'),
         padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
         fontSize:dynamicStyle$('20px', _window768$(prop.winWidth$), '18px', _window427$(prop.winWidth_$),'16px')
     }
     var p_2 = {
         padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
-        fontSize:dynamicStyle$('28px', _window768$(prop.winWidth$), '22px', _window427$(prop.winWidth_$),'20px')
+        fontSize:dynamicStyle$('28px', _window768$(prop.winWidth$), '22px', _window427$(prop.winWidth_$),'20px'),color:dynamicStyle$('#010c1d',prop.darkMode_$,'#f1dac4')
     }
     var p_3 = {
         padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
+        color:dynamicStyle$('#161b33',prop.darkMode_$,'#d90429'),
     }
     var span_s = {
-        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px')
+        padding:dynamicStyle$('4px', _window768$(prop.winWidth_$),'2px', _window427$(prop.winWidth_$),'2px'),
+        color:dynamicStyle$('#5cd85e',prop.darkMode_$,'#ff3')
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
@@ -347,10 +354,10 @@ var Article_x = (prop) => {
     return(
         <div style={outDiv_s}>
             <div style={img_s}></div>
-            <p style={p_1} className={'gray _500'}> outcoming date</p>
-            <p style={p_2} className={'black _600 '}> Title of article</p>
+            <p style={p_1} className={' _500'}> outcoming date</p>
+            <p style={p_2} className={' _600 '}> Title of article</p>
             <p style={p_3}> {txt} </p>
-            <span style={span_s} className={'_20 _500'}>Read more</span>
+            <span style={span_s} className={'_20 _500'}>READ MORE</span>
         </div>
     )
 }
