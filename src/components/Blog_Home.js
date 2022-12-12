@@ -24,7 +24,8 @@ export default function B_H (prop) {
     var navDiv_ = {
         position:'fixed',
         width:'100%',
-        zIndex:'999'
+        zIndex:'999',
+        display:'flex',flexDirection:'column',
     }
     var in1div_ = {
         background:`${dynamicStyle$('linear-gradient(#1a1d31,#2b2e42)',!prop.darkMode_$,'linear-gradient(#000, #111)')},url(${require('../imges/wallpaper_.png')})`,
@@ -104,14 +105,25 @@ export default function B_H (prop) {
             cursor_.style.left = e.pageX + 'px';
           })
         },[x])
+
+        useEffect(()=>{
+            function updateProgressBar(){
+                const {scrollTop,scrollHeight} = document.documentElement
+                const scrollPercent = scrollTop/(scrollHeight-window.innerHeight)*100+'%'
+                document.querySelector('.progress-bar').style.setProperty('--progress',scrollPercent)
+            }
+            window.addEventListener('scroll',updateProgressBar)
+                var barColor=prop.darkMode_$?'#fff':'#000'
+                document.querySelector('.progress-bar').style.setProperty('--color',barColor)
+        },[x])
+
     return(
 
-        <div style={main_} className={'BLOGHOME'}>
-
-        
+        <div style={main_} className={'BLOGHOME'}>        
         <div style={outDiv_1}>
             <div style={navDiv_}>
             <Navbar darkMode_$={prop.darkMode_$} setDarkMode_$={prop.setDarkMode_$} winWidth_$={prop.winWidth_$}/>
+            <div className="progress-bar"></div>
             </div>
 
             <div style={in1div_} className='txt_'>
