@@ -154,7 +154,7 @@ export function Navbar (prop){
         minWidth:'0px',
     }    
     var header_s = {
-        backgroundColor:dynamicStyle$('#2b2e4255',prop.darkMode_$, '#161b3333'),
+        backgroundColor:dynamicStyle$('#2b2e42aa',prop.darkMode_$, '#161b3388'),
         display: 'flex',
         flexDirection:'row',
         alignItems:'center',

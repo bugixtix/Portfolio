@@ -113,10 +113,23 @@ export default function B_H (prop) {
                 document.querySelector('.progress-bar').style.setProperty('--progress',scrollPercent)
             }
             window.addEventListener('scroll',updateProgressBar)
-                var barColor=prop.darkMode_$?'#fff':'#000'
-                document.querySelector('.progress-bar').style.setProperty('--color',barColor)
+                var barColor_=prop.darkMode_$?'#a69cac':'#ff3'
+                var barColor=prop.darkMode_$?'#fff':'linear-gradient(217deg,rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%),linear-gradient(127deg, rgba(0,255,0,.8),rgba(0,255,0,0)70.71%),linear-gradient(336deg, rgba(0,0,255,.8),rgba(0,0,255,0)70.71%)'
+                document.querySelector('.progress-bar').style.setProperty('--color',barColor_)
         },[x])
 
+        var handleCLICK_001 = () => {
+            window.location.assign('/special')
+        }
+        useEffect(()=>{
+            var CLICK_001D = document.querySelector('#CLICK_001')
+            CLICK_001D.addEventListener('click',handleCLICK_001)
+        },[x])
+
+        var CLICK_S = (event,id_,content_) => {
+            // var y = event.target.id===id_ ? event.target : event.target.closest(id_)
+            console.log('/article/'+'y')
+        }
     return(
 
         <div style={main_} className={'BLOGHOME'}>        
@@ -131,7 +144,7 @@ export default function B_H (prop) {
                 <h2 style={h2_s} className={'_700 uppercase _70'}>ixtix</h2>
                 <p style={p_s} className={'_500  _28'}>description you want</p>
                 </div>
-                <p style={p_1} className={'_500 uppercase _24'}>looking for something specific</p>
+                <p style={p_1} className={'_500 uppercase _24'} id={'CLICK_001'}>looking for something specific</p>
             </div>
         </div>
 
@@ -146,9 +159,9 @@ export default function B_H (prop) {
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_0' handler_={CLICK_S}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_1' handler_={CLICK_S}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_2' handler_={CLICK_S}/>
             </div>
             {_window768$(winWidth_$) && 
             <div style={in2div_}>
@@ -182,9 +195,9 @@ export default function B_H (prop) {
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_3'/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_4'/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_5'/>
             </div>
         </div>
 
@@ -199,6 +212,7 @@ var CARD_S = (prop) => {
         display:'flex',flexDirection:dynamicStyle$('column',_window427$(prop.winWidth$),'row'),
         width:'100%', margin:dynamicStyle$('0rem 0px 2rem 0px',_window427$(prop.winWidth_$),'0.7rem 0px 0.3rem 0px'), padding:dynamicStyle$('0px 0px 0px 24px', _window768$(prop.winWidth_$),'0px 0px 0px 16px',_window427$(prop.winWidth_$),'0px 8px 0px 8px'),
         cursor:'pointer',
+        zIndex:'2',position:'relative'
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -217,8 +231,17 @@ var CARD_S = (prop) => {
         padding:'0px 8px'
     }
     var txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr?'
+    var x = 1
+    var handleCLICK = (event)=>{
+        var y = event.target.id==='CLICK_010' ? event.target : event.target.closest('#CLICK_010')
+        console.log(y)
+    }
+    useEffect(()=>{
+    var CLICK_010D = document.querySelector('#CLICK_010')
+    CLICK_010D.addEventListener('click',(e)=>prop.handler_(e,prop.id_,'something'))
+    },[1])
     return(
-        <div style={outDiv_s}>
+        <div style={outDiv_s} id={'CLICK_010'}>
             <div style={img_s}></div>
             <div style={inDiv_}>
             <p style={p_1} className={'_500'}> outcoming date</p>
