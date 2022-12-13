@@ -155,7 +155,7 @@ export default function B_H (prop) {
                 <CARD_M darkMode_$={prop.darkMode_$} title={'yz'}/>
             </div>}
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_0'}/>
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
@@ -191,7 +191,7 @@ export default function B_H (prop) {
                 <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_1'}/>
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
@@ -320,8 +320,13 @@ var CARD_L = (prop) => {
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
 
+    useEffect(()=>{
+    },[])
+    function run(e){
+        console.log(e.target.id)
+    }
     return(
-        <div style={outDiv_s}>
+        <div style={outDiv_s} id={`${prop.id_}`} onMouseEnter={e=>run(e)}>
             <div style={img_s}></div>
             <div style={in1div_}>
                 <p style={p_1} className={'_22 _500'}> outcoming </p>
