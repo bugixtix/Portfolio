@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Navbar } from "./Home_";
-import { dynamicStyle$, _window768$, _window427$, dayOfYear$ } from "../lainy";
+import { dynamicStyle$, _window768$, _window427$, dayOfYear$, notdo$ } from "../lainy";
 import './style.css'
 
 
@@ -127,9 +127,9 @@ export default function B_H (prop) {
             CLICK_001D.addEventListener('click',handleCLICK_001)
         },[x])
 
-        var CLICK_S = (event,id_,content_) => {
+        var CLICK_S = (e) => {
             // var y = event.target.id===id_ ? event.target : event.target.closest(id_)
-            console.log('/article/'+'y')
+            console.log('/article/'+e.currentTarget.id)
         }
     return(
 
@@ -160,9 +160,9 @@ export default function B_H (prop) {
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_0' handler_={CLICK_S}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_1' handler_={CLICK_S}/>
-                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_2' handler_={CLICK_S}/>
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_0' />
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_1' />
+                <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_2' />
             </div>
             {_window768$(winWidth_$) && 
             <div style={in2div_}>
@@ -237,12 +237,23 @@ var CARD_S = (prop) => {
         var y = event.target.id==='CLICK_010' ? event.target : event.target.closest('#CLICK_010')
         console.log(y)
     }
-    useEffect(()=>{
-    var CLICK_010D = document.querySelector('#CLICK_010')
-    CLICK_010D.addEventListener('click',(e)=>prop.handler_(e,prop.id_,'something'))
-    },[1])
+    // useEffect(()=>{
+    // var CLICK_010D = document.querySelector('.S_outDiv')
+    // CLICK_010D.addEventListener('click',(e)=>{
+    //     let y = e.currentTarget
+    //     console.log(y)
+    // })},[1])
+    var CLICKED_=(e)=>{
+        console.log(e.currentTarget.id + '::clicked')
+    }
+    var MOUSEENTER_=(e)=>{
+        console.log(e.currentTarget + '::enter')
+    }
+    var MOUSELEAVE_=(e)=>{
+        console.log(e.currentTarget + '::leave')
+    }
     return(
-        <div style={outDiv_s} id={'CLICK_010'}>
+        <div style={outDiv_s} id={prop.id_} className={'S_outDiv'} onClick={(e)=>{CLICKED_(e)}} onMouseEnter={(e)=>{MOUSEENTER_(e)}} onMouseLeave={(e)=>{MOUSELEAVE_(e)}}>
             <div style={img_s}></div>
             <div style={inDiv_}>
             <p style={p_1} className={'_500'}> outcoming date</p>
@@ -279,8 +290,17 @@ var CARD_M = (prop) => {
     var run = () => {
         console.log(prop.title)
     }
+    var CLICKED_=(e)=>{
+        console.log(e.currentTarget.id + '::clicked')
+    }
+    var MOUSEENTER_=(e)=>{
+        console.log(e.currentTarget + '::enter')
+    }
+    var MOUSELEAVE_=(e)=>{
+        console.log(e.currentTarget + '::leave')
+    }
     return(
-        <div style={outDiv_s} onClick={run}>
+        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={imgDiv_}></div>
             <p style={p_1} className={'_20 _500'}> outcoming date</p>
             <p style={p_2} className={'_22 _600 '}>{txt}</p>
@@ -324,18 +344,18 @@ var CARD_L = (prop) => {
 
     useEffect(()=>{
     },[])
-    function run(e){
-        // if(prop.id_==='L_0'){
-        //     console.log(e.target)
-        // }else if(prop.id==='L_1'){
-        //     console.log(e.target + 'in second div')
-        // }
-        var y = e.target.classList.contains('L_') ? e.target : e.target.closest('L_')
-        // console.log(y)
-        console.log(e.currentTarget.id)
+
+    var CLICKED_=(e)=>{
+        console.log(e.currentTarget.id + '::clicked')
+    }
+    var MOUSEENTER_=(e)=>{
+        console.log(e.currentTarget + '::enter')
+    }
+    var MOUSELEAVE_=(e)=>{
+        console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} id={`${prop.id_}`} className={`L_ ${prop.id_}`} onMouseEnter={e=>run(e)}>
+        <div style={outDiv_s} id={`${prop.id_}`} className={`L_ ${prop.id_}`} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={img_s}></div>
             <div style={in1div_}>
                 <p style={p_1} className={'_22 _500'}> outcoming </p>
@@ -372,10 +392,18 @@ var ITEM_XS = (prop) => {
         lineHeight:'0.9em', letterSpacing:'1px',color:dynamicStyle$('#161b33',prop.darkMode_$,'#5cd85e'),
         fontSize:dynamicStyle$('20px',_window768$(prop.winWidth_$),'16px', _window427$(prop.winWidth_$),'15px')
     }
-
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
+    var CLICKED_=(e)=>{
+        console.log(e.currentTarget.id + '::clicked')
+    }
+    var MOUSEENTER_=(e)=>{
+        console.log(e.currentTarget + '::enter')
+    }
+    var MOUSELEAVE_=(e)=>{
+        console.log(e.currentTarget + '::leave')
+    }
     return(
-        <div style={outDiv_s}>
+        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
@@ -418,9 +446,17 @@ var Article_x = (prop) => {
     }
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
-
+    var CLICKED_=(e)=>{
+        console.log(e.currentTarget.id + '::clicked')
+    }
+    var MOUSEENTER_=(e)=>{
+        console.log(e.currentTarget + '::enter')
+    }
+    var MOUSELEAVE_=(e)=>{
+        console.log(e.currentTarget + '::leave')
+    }
     return(
-        <div style={outDiv_s}>
+        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={img_s}></div>
             <p style={p_1} className={' _500'}> outcoming date</p>
             <p style={p_2} className={' _600 '}> Title of article</p>
