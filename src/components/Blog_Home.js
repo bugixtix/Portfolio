@@ -7,6 +7,7 @@ import './style.css'
 export default function B_H (prop) {
     let [winWidth_$, setWinWidth] = useState(window.innerWidth)
 
+    let [cs_L_001, setCs_L_001] = useState(0)
     useEffect(()=>{
         setWinWidth(window.innerWidth)
     },[winWidth_$])
@@ -155,7 +156,7 @@ export default function B_H (prop) {
                 <CARD_M darkMode_$={prop.darkMode_$} title={'yz'}/>
             </div>}
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_0'}/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_0'} cs_001={cs_L_001} setCs_001={setCs_L_001}/>
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
@@ -191,7 +192,7 @@ export default function B_H (prop) {
                 <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div__}>
-                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_1'}/>
+                <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_1'} cs_001={cs_L_001} setCs_001={setCs_L_001}/>
                 <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
             </div>
             <div style={in2div___}>
@@ -291,7 +292,8 @@ var CARD_L = (prop) => {
 
     var outDiv_s = {
         display:'flex', flexDirection:'column', 
-        width:'100%', padding:'0px 8px', margin:'0px 0px 8px 0px'
+        width:'100%', padding:'0px 8px', margin:'0px 0px 8px 0px',
+        border:'2px solid red',
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -323,10 +325,17 @@ var CARD_L = (prop) => {
     useEffect(()=>{
     },[])
     function run(e){
-        console.log(e.target.id)
+        // if(prop.id_==='L_0'){
+        //     console.log(e.target)
+        // }else if(prop.id==='L_1'){
+        //     console.log(e.target + 'in second div')
+        // }
+        var y = e.target.classList.contains('L_') ? e.target : e.target.closest('L_')
+        // console.log(y)
+        console.log(e.currentTarget.id)
     }
     return(
-        <div style={outDiv_s} id={`${prop.id_}`} onMouseEnter={e=>run(e)}>
+        <div style={outDiv_s} id={`${prop.id_}`} className={`L_ ${prop.id_}`} onMouseEnter={e=>run(e)}>
             <div style={img_s}></div>
             <div style={in1div_}>
                 <p style={p_1} className={'_22 _500'}> outcoming </p>
