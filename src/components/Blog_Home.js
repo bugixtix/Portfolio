@@ -257,7 +257,7 @@ var CARD_S = (prop) => {
             <div style={img_s}></div>
             <div style={inDiv_}>
             <p style={p_1} className={'_500'}> outcoming date</p>
-            <p style={p_2} className={'_600 '}> {txt} </p>
+            <p style={p_2} className={'S_title _600'}> {txt} </p>
             </div>
         </div>
     )
@@ -267,7 +267,8 @@ var CARD_M = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start',
-        width:dynamicStyle$('100%',_window768$(prop.winWidth_$),'40%'),padding:dynamicStyle$('0px 24px 0px 0px ',_window768$(prop.winWidth_$),'0px 8px',_window427$(prop.winWidth_$),'0px 8px'),margin:dynamicStyle$('0rem 0px 3rem 0px',_window768$(prop.winWidth_$),'1rem 0px 1rem 0px',_window427$(prop.winWidth_$),'1rem 0px 1rem 0px')
+        width:dynamicStyle$('100%',_window768$(prop.winWidth_$),'40%'),padding:dynamicStyle$('0px 24px 0px 0px ',_window768$(prop.winWidth_$),'0px 8px',_window427$(prop.winWidth_$),'0px 8px'),margin:dynamicStyle$('0rem 0px 3rem 0px',_window768$(prop.winWidth_$),'1rem 0px 1rem 0px',_window427$(prop.winWidth_$),'1rem 0px 1rem 0px'),
+        cursor:'pointer'
     }
     var imgDiv_ = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -300,10 +301,10 @@ var CARD_M = (prop) => {
         console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} className={'M_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={imgDiv_}></div>
             <p style={p_1} className={'_20 _500'}> outcoming date</p>
-            <p style={p_2} className={'_22 _600 '}>{txt}</p>
+            <p style={p_2} className={'M_title _22 _600 '}>{txt}</p>
         </div>
     )
 }
@@ -313,15 +314,17 @@ var CARD_L = (prop) => {
     var outDiv_s = {
         display:'flex', flexDirection:'column', 
         width:'100%', padding:'0px 8px', margin:'0px 0px 8px 0px',
-        border:'2px solid red',
+        corsor:'pointer',
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
         width:'100%', height:'400px',
         borderRadius:'8px',
+        cursor:'pointer',
     }
     var in1div_ = {
         display:'flex',flexDirection:'column',
+        cursor:'pointer',
     }
     var p_1 = {
         padding:dynamicStyle$(' 4px 0px',_window768$(prop.winWidth_$), '2px 0px', _window427$(prop.winWidth_$),'2px 0px'),
@@ -355,12 +358,12 @@ var CARD_L = (prop) => {
         console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} id={`${prop.id_}`} className={`L_ ${prop.id_}`} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} id={`${prop.id_}`} className={`L_outDiv ${prop.id_}`} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={img_s}></div>
             <div style={in1div_}>
                 <p style={p_1} className={'_22 _500'}> outcoming </p>
-                <p style={p_2} className={' _38 _800'}> Title </p>
-                <p style={p_3} className={'_22 _500 '}> {txt} </p>
+                <p style={p_2} className={'L_title _38 _800'}> Title </p>
+                <p style={p_3} className={'L_text _22 _500 '}> {txt} </p>
                 <span style={span_s} className={'_20 _500'}>READ MORE</span>
             </div>
         </div>
@@ -372,7 +375,8 @@ var ITEM_XS = (prop) => {
     var outDiv_s = {
         display:'flex',flexDirection:'row',
         padding:'0px 8px', margin:'8px 0px',
-        width:'100%'
+        width:'100%',
+        cursor:'pointer',
     }
 
     var img_s = {
@@ -403,12 +407,12 @@ var ITEM_XS = (prop) => {
         console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} className={'XS_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
                 <p style={p_1} className={'gray _500'}>outcoming</p>
-                <p style={p_2} className={'black _600 '}>{txt}</p>
+                <p style={p_2} className={'XS_title black _600 '}>{txt}</p>
             </div>
         </div>
     )
@@ -419,7 +423,8 @@ var Article_x = (prop) => {
 
     var outDiv_s = {
         display:'flex',flexDirection:'column',alignItems:'flex-start',
-        width:dynamicStyle$('25vw',_window768$(prop.winWidth_$),dynamicStyle$('45%',prop.lastChild_,'90%'),_window427$(prop.winWidth_$),dynamicStyle$('44%',prop.lastChild_,'90%')), margin:'8px'
+        width:dynamicStyle$('25vw',_window768$(prop.winWidth_$),dynamicStyle$('45%',prop.lastChild_,'90%'),_window427$(prop.winWidth_$),dynamicStyle$('44%',prop.lastChild_,'90%')), margin:'8px',
+        cursor:'pointer',
     }
     var img_s = {
         background:`url(${require('../imges/img_.jpg')})`, backgroundBlendMode:'saturation', backgroundPosition:'center', backgroundSize:'cover',
@@ -456,11 +461,11 @@ var Article_x = (prop) => {
         console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} className={'AX_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={img_s}></div>
             <p style={p_1} className={' _500'}> outcoming date</p>
-            <p style={p_2} className={' _600 '}> Title of article</p>
-            <p style={p_3}> {txt} </p>
+            <p style={p_2} className={'AX_title _600 '}> Title of article</p>
+            <p style={p_3} className={'AX_text'}> {txt} </p>
             <span style={span_s} className={'_20 _500'}>READ MORE</span>
         </div>
     )
