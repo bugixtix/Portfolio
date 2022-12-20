@@ -36,7 +36,7 @@ function App() {
       </Fragment>
     )
   }
-  let Blog = () =>{
+  let Article = () =>{
     return(
       <Fragment>
         <Navbar darkMode_$={dark_$} setDarkMode_$={setDark_$} winWidth_$={winWidth_$} setWinWidth_$={setWinWidth_$}/>
@@ -88,10 +88,31 @@ function App() {
     <Routes>
       <Route path="/" exact element={<Dom/> } /> 
       <Route path='/abc' exact element={<Abc/>} />
-      <Route path='/article' exact element={<Blog/>}/>
+      <Route path='/article' exact element={<Article/>}/>
       <Route path='/about' exact element={<About/>}/>
       <Route path='/contact' exact element={<Contact/>}/>
-      <Route path='/bloghome' exact element={<Blog_Home/>}/>
+      <Route path='/blog' exact element={<Blog_Home/>}/>
+
+      <Route path={`/blog/${'S_0'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'S_1'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'S_2'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'S_3'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'S_4'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'S_5'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'L_0'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'L_1'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'XS_0'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'XS_1'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'M_0'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'M_1'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'M_2'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'M_3'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_0'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_1'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_2'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_3'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_4'}`} exact element={<Article/>}/>
+      <Route path={`/blog/${'AX_5'}`} exact element={<Article/>}/>
     </Routes>
     </div>
      </BrowserRouter> 

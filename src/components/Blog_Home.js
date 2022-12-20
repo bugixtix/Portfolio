@@ -107,16 +107,21 @@ export default function B_H (prop) {
           })
         },[x])
 
+        function updateProgressBar(){
+            const {scrollTop,scrollHeight} = document.documentElement
+            const scrollPercent = scrollTop/(scrollHeight-window.innerHeight)*100+'%'
+            document.querySelector('.progress-bar').style.setProperty('--progress',scrollPercent)
+        }
         useEffect(()=>{
-            function updateProgressBar(){
-                const {scrollTop,scrollHeight} = document.documentElement
-                const scrollPercent = scrollTop/(scrollHeight-window.innerHeight)*100+'%'
-                document.querySelector('.progress-bar').style.setProperty('--progress',scrollPercent)
-            }
+            let siteLocation= window.location.href
+            if(siteLocation.includes('blog')){
             window.addEventListener('scroll',updateProgressBar)
                 var barColor_=prop.darkMode_$?'#a69cac':'#ff3'
                 var barColor=prop.darkMode_$?'#fff':'linear-gradient(217deg,rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%),linear-gradient(127deg, rgba(0,255,0,.8),rgba(0,255,0,0)70.71%),linear-gradient(336deg, rgba(0,0,255,.8),rgba(0,0,255,0)70.71%)'
-                document.querySelector('.progress-bar').style.setProperty('--color',barColor_)
+                document.querySelector('.progress-bar').style.setProperty('--color',barColor_);
+            }
+                
+                
         },[x])
 
         var handleCLICK_001 = () => {
@@ -152,12 +157,12 @@ export default function B_H (prop) {
         <div style={outDiv_2}>
             {!_window768$(winWidth_$) &&
             <div style={in2div_}>
-                <CARD_M darkMode_$={prop.darkMode_$} title={'xy'}/>
-                <CARD_M darkMode_$={prop.darkMode_$} title={'yz'}/>
+                <CARD_M darkMode_$={prop.darkMode_$} id_={'M_0'} title={'xy'}/>
+                <CARD_M darkMode_$={prop.darkMode_$} id_={'M_1'}title={'yz'}/>
             </div>}
             <div style={in2div__}>
                 <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_0'} cs_001={cs_L_001} setCs_001={setCs_L_001}/>
-                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'XS_0'}/>
             </div>
             <div style={in2div___}>
                 <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_0' />
@@ -166,8 +171,8 @@ export default function B_H (prop) {
             </div>
             {_window768$(winWidth_$) && 
             <div style={in2div_}>
-                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'M_0'}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'M_1'}/>
             </div>}
 
             
@@ -176,24 +181,24 @@ export default function B_H (prop) {
         </div>
 
         <div style={outDiv_3}>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} lastChild_={true}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_0'}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_1'}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_2'}lastChild_={true}/>
         </div>
         <div style={outDiv_3}>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} lastChild_={true}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_3'}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_4'}/>
+                <Article_x winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'AX_5'} lastChild_={true}/>
         </div>
         
         <div style={outDiv_2}>
             <div style={in2div_}>
-                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
-                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'M_2'}/>
+                <CARD_M winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'M_3'}/>
             </div>
             <div style={in2div__}>
                 <CARD_L winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'L_1'} cs_001={cs_L_001} setCs_001={setCs_L_001}/>
-                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$}/>
+                <ITEM_XS winWidth$={winWidth_$} darkMode_$={prop.darkMode_$} id_={'XS_1'}/>
             </div>
             <div style={in2div___}>
                 <CARD_S winWidth_$={winWidth_$} darkMode_$={prop.darkMode_$} id_='S_3'/>
@@ -244,13 +249,14 @@ var CARD_S = (prop) => {
     //     console.log(y)
     // })},[1])
     var CLICKED_=(e)=>{
-        console.log(e.currentTarget.id + '::clicked')
+        var id_ = e.currentTarget.id
+        window.location.assign(`${window.location}/${id_}`)
     }
     var MOUSEENTER_=(e)=>{
-        console.log(e.currentTarget + '::enter')
+        // console.log(e.currentTarget + '::enter')
     }
     var MOUSELEAVE_=(e)=>{
-        console.log(e.currentTarget + '::leave')
+        // console.log(e.currentTarget + '::leave')
     }
     return(
         <div style={outDiv_s} id={prop.id_} className={'S_outDiv'} onClick={(e)=>{CLICKED_(e)}} onMouseEnter={(e)=>{MOUSEENTER_(e)}} onMouseLeave={(e)=>{MOUSELEAVE_(e)}}>
@@ -292,16 +298,17 @@ var CARD_M = (prop) => {
         console.log(prop.title)
     }
     var CLICKED_=(e)=>{
-        console.log(e.currentTarget.id + '::clicked')
+        var id_ = e.currentTarget.id
+        window.location.assign(`${window.location}/${id_}`)
     }
     var MOUSEENTER_=(e)=>{
-        console.log(e.currentTarget + '::enter')
+        // console.log(e.currentTarget + '::enter')
     }
     var MOUSELEAVE_=(e)=>{
-        console.log(e.currentTarget + '::leave')
+        // console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} className={'M_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} id={prop.id_} className={'M_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={imgDiv_}></div>
             <p style={p_1} className={'_20 _500'}> outcoming date</p>
             <p style={p_2} className={'M_title _22 _600 '}>{txt}</p>
@@ -349,13 +356,14 @@ var CARD_L = (prop) => {
     },[])
 
     var CLICKED_=(e)=>{
-        console.log(e.currentTarget.id + '::clicked')
+        var id_ = e.currentTarget.id
+        window.location.assign(`${window.location}/${id_}`)
     }
     var MOUSEENTER_=(e)=>{
-        console.log(e.currentTarget + '::enter')
+        // console.log(e.currentTarget + '::enter')
     }
     var MOUSELEAVE_=(e)=>{
-        console.log(e.currentTarget + '::leave')
+        // console.log(e.currentTarget + '::leave')
     }
     return(
         <div style={outDiv_s} id={`${prop.id_}`} className={`L_outDiv ${prop.id_}`} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
@@ -364,7 +372,7 @@ var CARD_L = (prop) => {
                 <p style={p_1} className={'_22 _500'}> outcoming </p>
                 <p style={p_2} className={'L_title _38 _800'}> Title </p>
                 <p style={p_3} className={'L_text _22 _500 '}> {txt} </p>
-                <span style={span_s} className={'_20 _500'}>READ MORE</span>
+                <span style={span_s} className={'L_more _20 _500'}>READ MORE</span>
             </div>
         </div>
     )
@@ -398,16 +406,17 @@ var ITEM_XS = (prop) => {
     }
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
     var CLICKED_=(e)=>{
-        console.log(e.currentTarget.id + '::clicked')
+        var id_ = e.currentTarget.id
+        window.location.assign(`${window.location}/${id_}`)
     }
     var MOUSEENTER_=(e)=>{
-        console.log(e.currentTarget + '::enter')
+        // console.log(e.currentTarget + '::enter')
     }
     var MOUSELEAVE_=(e)=>{
-        console.log(e.currentTarget + '::leave')
+        // console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} className={'XS_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} id={prop.id_} className={'XS_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
 
             <div style={img_s}></div>
             <div style={inDiv_s}>
@@ -452,21 +461,22 @@ var Article_x = (prop) => {
     
     let txt = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'
     var CLICKED_=(e)=>{
-        console.log(e.currentTarget.id + '::clicked')
+        var id_ = e.currentTarget.id
+        window.location.assign(`${window.location}/${id_}`)
     }
     var MOUSEENTER_=(e)=>{
-        console.log(e.currentTarget + '::enter')
+        // console.log(e.currentTarget + '::enter')
     }
     var MOUSELEAVE_=(e)=>{
-        console.log(e.currentTarget + '::leave')
+        // console.log(e.currentTarget + '::leave')
     }
     return(
-        <div style={outDiv_s} className={'AX_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
+        <div style={outDiv_s} id={prop.id_} className={'AX_outDiv'} onClick={e=>CLICKED_(e)} onMouseEnter={e=>MOUSEENTER_(e)} onMouseLeave={e=>MOUSELEAVE_(e)}>
             <div style={img_s}></div>
             <p style={p_1} className={' _500'}> outcoming date</p>
             <p style={p_2} className={'AX_title _600 '}> Title of article</p>
             <p style={p_3} className={'AX_text'}> {txt} </p>
-            <span style={span_s} className={'_20 _500'}>READ MORE</span>
+            <span style={span_s} className={'AX_more _20 _500'}>READ MORE</span>
         </div>
     )
 }

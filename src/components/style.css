@@ -5,6 +5,9 @@
 .S_outDiv:hover .S_title, .M_outDiv:hover .M_title, .L_outDiv:hover .L_title, .L_outDiv:hover .L_text, .XS_outDiv:hover .XS_title, .AX_outDiv:hover .AX_title, .AX_outDiv:hover .AX_text{
     text-decoration: underline;
 }
+.L_outDiv:hover .L_more, .AX_outDiv:hover .AX_more{
+    font-weight: bolder;
+}
 .progress-bar{
     --progress: 0;
     width: var(--progress);height: 6px;

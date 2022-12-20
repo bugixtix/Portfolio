@@ -185,7 +185,7 @@ export function Navbar (prop){
         padding:'6px 12px 2px 12px',
         border:'none',
         cursor:'pointer',
-        color:dynamicStyle$('#222',prop.darkMode_$,'#eee'),
+        color:dynamicStyle$('#eee',prop.darkMode_$,'#eee'),
     }
     return(
         <header style={header_s}>
@@ -216,9 +216,9 @@ export function Navbar (prop){
                     </button>
                 </Link>
                 
-                <Link to={'/article'} className={`link_`}>
+                <Link to={'/blog'} className={`link_`}>
                     <button style={btns_s} className={'btn_4'} id={'article_'}>
-                        Article
+                        Blog
                     </button>
                  </Link>
                 <Link to={'/about'}  className='link_'>
